@@ -1,37 +1,24 @@
-import  Axios  from 'axios';
 import React,{useEffect,useState} from 'react';
 import './App.css';
-import {MovieRequest} from './Components/utils/Axios'
-
-
-
-let key = '564ff4ab275baff4372adb3dc85ab368'
-let url = 'https://api.themoviedb.org/3'
-
-
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Hompage from './Components/pages/HomePage/HomePage';
+import Navbar from './Components/Navbar/Navbar'
+import Error404 from './Components/pages/404Error/Error';
 function App() {
 
-  const [movies,SetMovies] = useState([])
-
-  useEffect(() =>{
-
-    const Request = async () =>{
-
-      const Responce = await MovieRequest.get(`/popular?api_key=${key}`)
-      console.log(Responce);
-      
-      SetMovies(Responce.data);
-      
-    }
-    Request()
-
-  },[])
 
   return (
-    <div className="App">
-        <h1>First Files</h1>
+    <BrowserRouter>
+      <div className="App">
+          <Navbar></Navbar>
+          <Routes>
+            <Route path='/' element={<Hompage/>}/>
+            <Route path='/navbar' element={<Navbar/>}/>
+            <Route path = '*'  element={<Error404 />}/>
+          </Routes>
+      </div>
+    </BrowserRouter>
 
-    </div>
   );
 }
 
