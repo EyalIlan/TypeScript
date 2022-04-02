@@ -1,0 +1,23 @@
+
+
+.card{
+     /* min-height:150px ; */
+    /* min-height:300px ; */
+    max-height:350px ;
+    max-width: 250px; 
+    background-color: rgb(4, 60, 164);
+    text-align: center;
+}
+
+
+
+.card img{
+    height: 80%;
+    width: 100%;
+    /* max-height:250px ; */
+    /* max-width: 250px; */
+}
+
+#card_content{
+    height: 20%;
+}

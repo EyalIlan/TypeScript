@@ -13,8 +13,7 @@ function App() {
           <Navbar></Navbar>
           <Routes>
               <Route path='/' element={<Hompage/>}/>
-
-            <Route path = '/*'  element={<Error404 />}/>
+              <Route path = '/*'  element={<Error404 />}/>
           </Routes>
       </div>
     </BrowserRouter>

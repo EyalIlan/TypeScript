@@ -2,8 +2,8 @@
 .homepage{
     /* padding: 50px; */
     /* padding: 50px; */
-    padding: 50px 0;
+    padding: 50px 20px;
     margin-left: 5vw;
-    height: 100vh;
+    /* min-height: 89vh; */
     /* background-color: red; */
 }

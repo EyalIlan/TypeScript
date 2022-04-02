@@ -2,7 +2,7 @@
 .navbar_container{
     background-image: linear-gradient(#0026fd,#2a2a72);
     height: 100vh;
-    width: 11vw;
+    width: 4vw;
     position: fixed;
     transition: 0.2s width ease-in;
 }
@@ -33,7 +33,7 @@
 .link_text{
     width: 100%;
     text-align: center;
-    /* opacity:  0; */
+    opacity:  0;
     transition: 0.2s opacity ease-in;
 }
 
