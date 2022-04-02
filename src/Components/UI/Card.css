@@ -7,8 +7,16 @@
     max-width: 250px; 
     background-color: rgb(4, 60, 164);
     text-align: center;
-}
+    border: 4px solid black;
+    transition: 0.2s transform ease-in-out;
+    cursor: pointer;
+    /* color: rgb(1, 6, 21); */
+    box-shadow: 3px 10px 10px;
+} 
 
+.card:hover{
+    transform: translate(0,-20px);
+}
 
 
 .card img{

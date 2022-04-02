@@ -7,7 +7,7 @@ const Navbar:React.FC<IProps> = () => {
   return (
         
         <div className='navbar_container'>
-          <div id='navbar_links' className='flex around flex_col '>
+          <div id='navbar_links' className='flex around flex_col primary_color'>
             
             <div className='flex navbar_link'>
                 {/* <img src="/images/movieIcon.png" alt="" /> */}
