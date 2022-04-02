@@ -12,9 +12,9 @@ function App() {
       <div className="App">
           <Navbar></Navbar>
           <Routes>
-            <Route path='/' element={<Hompage/>}/>
-            <Route path='/navbar' element={<Navbar/>}/>
-            <Route path = '*'  element={<Error404 />}/>
+              <Route path='/' element={<Hompage/>}/>
+
+            <Route path = '/*'  element={<Error404 />}/>
           </Routes>
       </div>
     </BrowserRouter>

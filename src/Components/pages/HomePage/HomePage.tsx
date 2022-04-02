@@ -2,7 +2,7 @@
 import  React,{useState,useEffect} from 'react';
 import {MovieRequest} from '../../utils/Axios'
 import { TmdbApiKey } from '../../utils/data';
-
+import './HomePage.css'
 
 export interface IProps {
 
@@ -19,7 +19,7 @@ const Hompage:React.FC<IProps> =  (props)=> {
       const Request = async () =>{
   
         const Responce = await MovieRequest.get(`/popular?api_key=${TmdbApiKey}`)
-        console.log(Responce);
+        console.log(Responce.data);
         
         SetMovies(Responce.data);
         
@@ -30,8 +30,15 @@ const Hompage:React.FC<IProps> =  (props)=> {
   
   
     return (
-    <div>
-        {/* <h1>HomePage</h1> */}
+    <div className='homepage'>
+        <div className='grid grid-col-5'>
+            <div className="box"></div>
+            <div className="box"></div>
+            <div className="box"></div>
+            <div className="box"></div>
+            <div className="box"></div>
+            <div className="box"></div>
+        </div>
     </div>
   );
 }

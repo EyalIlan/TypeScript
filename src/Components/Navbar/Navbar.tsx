@@ -10,43 +10,43 @@ const Navbar:React.FC<IProps> = () => {
           <div id='navbar_links' className='flex around flex_col '>
             
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                {/* <img src="/images/movieIcon.png" alt="" /> */}
                 <div className='link_text'>
-                  <h2>Logo</h2>
+                  <h2>MoviePlay</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/video-player.png" alt="" />
                 <div className='link_text'>
                   <h2>Movies</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/tv-show.png" alt="" />
                 <div className='link_text'>
                   <h2>Tv_shows</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/actor.png" alt="" />
                 <div className='link_text'>
                   <h2>Actors</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/star.png" alt="" />
                 <div className='link_text'>
                   <h2>Favorites</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/bar-graph.png" alt="" />
                 <div className='link_text'>
                   <h2>Statics</h2>
                 </div>
             </div>
             <div className='flex navbar_link'>
-                <img src="/images/movieIcon.png" alt="" />
+                <img src="/images/magnifier.png" alt="" />
                 <div className='link_text'>
                   <h2>Search</h2>
                 </div>

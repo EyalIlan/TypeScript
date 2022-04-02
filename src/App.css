@@ -11,6 +11,30 @@ html{
 
 body{
     color: white;
+    font-family: sans-serif;
+}
+
+
+.App{
+    height: 100vh;
+    position: relative;
+    background-color: black;
+    z-index: 2;
+}
+
+.App::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/public/images/movieBG.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: -1;
 }
 
 .row{
@@ -39,3 +63,17 @@ body{
     flex-direction: column;
 }
 
+.grid{
+    display: grid;
+    grid-gap: 2.5rem;
+}
+.grid-col-5{
+    grid-template-columns: repeat(5,1fr);
+}
+
+.box{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
