@@ -14,6 +14,9 @@ const Hompage:React.FC<IProps> =  (props)=> {
   
   
     const [movies,SetMovies] = useState<movieIF[]>([])
+    
+   
+
 
     useEffect(() =>{
   

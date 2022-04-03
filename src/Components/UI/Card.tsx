@@ -12,7 +12,6 @@ type Props = {
 
  const Card:React.FC<Props> = ({imageUrl,rating,descritption,title}) => {
   
-    console.log(imageUrl);
     
     return (
     <div className='card'>

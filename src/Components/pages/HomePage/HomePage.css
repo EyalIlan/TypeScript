@@ -1,9 +1,6 @@
 
 .homepage{
-    /* padding: 50px; */
-    /* padding: 50px; */
-    padding: 50px 20px;
-    margin-left: 5vw;
-    /* min-height: 89vh; */
-    /* background-color: red; */
+    width: 70vw;
+    margin: auto;
+    padding: 50px;
 }

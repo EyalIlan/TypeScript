@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Hompage from './Components/pages/HomePage/HomePage';
@@ -12,8 +12,8 @@ function App() {
       <div className="App">
           <Navbar></Navbar>
           <Routes>
-              <Route path='/' element={<Hompage/>}/>
-              <Route path = '/*'  element={<Error404 />}/>
+              <Route path='/'  element={<Hompage/>}/>
+              {/* <Route path = '/*'  element={<Error404 />}/> */}
           </Routes>
       </div>
     </BrowserRouter>
