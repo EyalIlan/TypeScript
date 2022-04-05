@@ -1,0 +1,20 @@
+
+#errorbackround{
+    height: 100vh;
+    background-image: url('/public/images/404PageBG2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 40px;
+}
+
+#errorbackround h1{
+    margin-bottom: 50px;
+}
+#errorbackround button{
+    font-size: 20px;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}

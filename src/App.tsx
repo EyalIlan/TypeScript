@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Hompage from './Components/pages/HomePage/HomePage';
 import Navbar from './Components/Navbar/Navbar'
-import Error404 from './Components/pages/404Error/Error';
+import Error404 from './Components/pages/404Error/Error404';
 function App() {
 
 
@@ -13,7 +13,7 @@ function App() {
           <Navbar></Navbar>
           <Routes>
               <Route path='/'  element={<Hompage/>}/>
-              {/* <Route path = '/*'  element={<Error404 />}/> */}
+              <Route path = '/*'  element={<Error404 />}/>
           </Routes>
       </div>
     </BrowserRouter>
