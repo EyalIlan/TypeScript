@@ -1,5 +1,5 @@
 import React from 'react'
-import { imagesUrlRequest } from '../utils/data'
+import { imagesUrlRequest } from '../../utils/data'
 import './Card.css'
 
 type Props = {

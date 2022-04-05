@@ -1,5 +1,5 @@
 import  React,{useState,useEffect} from 'react';
-import Card from '../../UI/Card';
+import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
 import { useSelector} from 'react-redux'
@@ -7,7 +7,7 @@ import { moviesData, saveData } from '../../utils/store/reducers/movie';
 import {MovieRequest} from '../../utils/Axios'
 import { TmdbApiKey } from '../../utils/data';
 import {useDispatch} from 'react-redux'
-
+import Spinner from '../../UI/Spinner/Spinner';
 
 export interface IProps {
 
@@ -41,7 +41,8 @@ const Hompage:React.FC<IProps> =  (props)=> {
     })
   
     return (
-    <div className='homepage'>
+    <div className='homepage flex center'>
+          {/* <Spinner></Spinner> */}
         <div className='grid grid-col-5'>
           {data}
         </div>

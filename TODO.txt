@@ -1,18 +1,32 @@
+
+@ -> importent
+* -> working
+$ -> finish
+
+
+
+
+
 responsive hompage
 login page
 single movie page
 favorite page
 analytics page
+
 server 
+
 add spinner
-animation on cards $
-change data array values on request tv,movie,actor and save it into global state
+
+animation on cards $$$$$$$$$
+card animation dont work when change sections
+
+
+change data array values on request tv,movie,actor and save it into global state -> * (can change from tv to movies)
 user state
+select diffrent options from a section popular,trending....
 not show navbar on page 404 & login
 add logout button and make login state
 
+fix background image not to move when change diffrent section
 
 
-@ -> importent
-* -> working
-$ -> finish

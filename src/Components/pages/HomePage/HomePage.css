@@ -1,6 +1,9 @@
 
 .homepage{
     width: 70vw;
+    min-height:100vh;
+    box-sizing: border-box;
     margin: auto;
     padding: 50px;
+    position: relative;
 }
