@@ -1,14 +1,14 @@
 
 
 .card{
-   
     background-color: rgb(4, 60, 164);
     text-align: center;
     border: 4px solid black;
     transition: 0.2s transform ease-in-out;
     cursor: pointer;
-    /* color: rgb(1, 6, 21); */
     box-shadow: 3px 10px 10px;
+    animation-duration: 1s;
+    animation-name: CardAppernce;
 } 
 
 .card:hover{
@@ -26,3 +26,14 @@
 #card_content{
     height: 20%;
 }
+
+
+@keyframes CardAppernce {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,13 @@
+responsive hompage
+login page
+single movie page
+favorite page
+analytics page
+server 
+add spinner
+animation on cards * $
+change data array values on request tv,movie,actor and save it into global state
+user state
+not show navbar on page 404 & login
+add logout button and make login state
+

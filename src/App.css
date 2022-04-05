@@ -19,6 +19,9 @@ body{
     position: relative;
     background-color: black;
     z-index: 2;
+    background-repeat: repeat;
+    animation-duration: 0.02s;
+    animation-name: CardAppernce;
 }
 
 .App::before{
@@ -30,8 +33,8 @@ body{
     bottom: 0;
     background-image: url('/public/images/movieBG.jpg');
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     opacity: 0.6;
     z-index: -1;
 }

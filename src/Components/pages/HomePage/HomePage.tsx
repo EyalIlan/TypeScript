@@ -55,6 +55,7 @@ const Hompage:React.FC<IProps> =  (props)=> {
     <div className='homepage'>
         <div className='grid grid-col-5'>
           {data}
+
         </div>
     </div>
   );
