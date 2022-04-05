@@ -54,7 +54,6 @@ const Navbar:React.FC<IProps> = () => {
   })
 
 
-  console.log(active);
   
 
   const toggleActive = (index:number):void =>{

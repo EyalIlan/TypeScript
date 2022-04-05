@@ -5,6 +5,9 @@ import {MovieRequest} from '../../utils/Axios'
 import { TmdbApiKey } from '../../utils/data';
 import './HomePage.css'
 import { movieIF } from '../../utils/interface';
+import {useDispatch, useSelector} from 'react-redux'
+import { moviesData, saveData } from '../../utils/store/reducers/movie';
+import { log } from 'console';
 export interface IProps {
 
 
@@ -12,8 +15,13 @@ export interface IProps {
 
 const Hompage:React.FC<IProps> =  (props)=> {
   
+    
   
-    const [movies,SetMovies] = useState<movieIF[]>([])
+    const dispatch = useDispatch();
+
+    
+
+    // const [movies,SetMovies] = useState<movieIF[]>([])
     
    
 
@@ -23,19 +31,30 @@ const Hompage:React.FC<IProps> =  (props)=> {
       const Request = async () =>{
   
         const Responce = await MovieRequest.get(`/popular?api_key=${TmdbApiKey}`)
-        console.log(Responce.data.results);
-        
-        SetMovies(Responce.data.results);
+        dispatch(saveData(Responce.data.results))
         
       }
       Request()
-  
+      
     },[])
-    
-    // console.log(movies[0].original_title);
-    
-    const data = movies.map(p =>{
-      return <Card imageUrl = {p.poster_path}  title={p.title}></Card>
+
+
+  //   export interface movieIF{
+  //     title?:string
+  //     overview:string
+  //     vote_average:number
+  //     poster_path:string
+  // }
+
+
+  
+  
+  
+  
+  
+    let movies =  useSelector(moviesData)
+    const data = movies.map((p,index) =>{
+      return <Card key={index} imageUrl = {p.poster_path}  title={p.title}></Card>
     })
   
     return (
