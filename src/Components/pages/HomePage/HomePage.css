@@ -1,9 +1,15 @@
 
 .homepage{
-    width: 70vw;
-    min-height:100vh;
+    width: 75vw;
     box-sizing: border-box;
-    margin: auto;
-    padding: 50px;
+    padding: 40px;
     position: relative;
+    margin-left: 40px;
+}
+
+
+
+
+.page_section{
+    min-height:100vh;
 }

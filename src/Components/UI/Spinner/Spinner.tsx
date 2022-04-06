@@ -5,8 +5,13 @@ type Props = {}
 const Spinner = (props: Props) => {
   return (
       
-          <div className="loader"></div>
- 
+   
+       
+            <div className="loader">
+            
+            </div>
+    
+  
   )
 }
 export default Spinner

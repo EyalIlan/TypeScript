@@ -2,7 +2,7 @@
 @ -> importent
 * -> working
 $ -> finish
-
+& -> change mission
 
 
 
@@ -15,7 +15,9 @@ analytics page
 
 server 
 
-add spinner
+add spinner $
+remove flex center from homepage and fix spinner to be in the middle of the screen ->  & the cards and the spinner will be in the center
+
 
 animation on cards $$$$$$$$$
 card animation dont work when change sections
@@ -28,5 +30,4 @@ not show navbar on page 404 & login
 add logout button and make login state
 
 fix background image not to move when change diffrent section
-
 

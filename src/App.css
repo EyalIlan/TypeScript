@@ -78,7 +78,9 @@ body{
 }
 
 .box{
-    margin: auto;
+    position: absolute;
+    left: 50%;
+    top:40%;
     width: 100px;
     height: 100px;
     background-color: red;

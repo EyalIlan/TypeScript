@@ -1,13 +1,20 @@
+/* .testing{
 
+    max-height: 300px;
+    background-color: green;
+}
+
+#loader_container{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+} */
 
 
 .loader {
-   
-   
-    font-size: 10px;
-    margin-left: 100px;
-    width: 15rem;
-    height: 15rem;
+
+    width:150px;
+    height:150px;
     border-radius: 50%;
     background: #ffffff;
     background: -moz-linear-gradient(left, #1139eb 10%, rgba(255, 255, 255, 0) 42%);
@@ -15,7 +22,6 @@
     background: -o-linear-gradient(left, #f52626 10%, rgba(14, 106, 191, 0) 42%);
     background: -ms-linear-gradient(left, #711414 10%, #062abd00 42%);
     background: linear-gradient(to right, #266cb6 10%, rgba(255, 255, 255, 0) 42%);
-    position: relative;
     -webkit-animation: load3 1.0s infinite linear;
     animation: load3 1.0s infinite linear;
     -webkit-transform: translateZ(0);
