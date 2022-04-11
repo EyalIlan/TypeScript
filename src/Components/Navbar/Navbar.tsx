@@ -1,8 +1,8 @@
 import  React from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
+import { changeSection,fetchDataFromApi } from '../utils/store/reducers/movie';
 import './Navbar.css'
-
 
 export interface IProps {
 
@@ -23,10 +23,11 @@ const Navbar:React.FC<IProps> = () => {
 
   const dispatch = useDispatch()
 
-  const GetDataFromRequest = async (seciton:string) =>{
-    
+  const getDataFromRequest = async (section:string) =>{
 
-
+    dispatch(changeSection(section))
+    dispatch(fetchDataFromApi())
+  
   }
   
   
@@ -38,15 +39,16 @@ const Navbar:React.FC<IProps> = () => {
         imgUrl:'/images/video-player.png',
         title:'Movies'
         ,linkAction:function(){
+          getDataFromRequest('movie')
         }
-      },
-      {
+      }
+      ,{
         id:2,
         imgUrl:'/images/tv-show.png',
         title:'Tv_shows'
         ,linkAction:function(){
           
-          GetDataFromRequest('tv')
+          getDataFromRequest('tv')
 
         }
     },

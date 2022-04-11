@@ -85,7 +85,7 @@ const dataSlice = createSlice({
     }
 })
 
-export const { saveData, removeData } = dataSlice.actions
+export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection} = dataSlice.actions
 
 export const moviesData = (state: RootState) => state.data.value
 
