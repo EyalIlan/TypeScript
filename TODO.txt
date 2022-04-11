@@ -6,28 +6,39 @@ $ -> finish
 
 
 
-
+****************************************************************
+create a single function to handle diffrent request
 responsive hompage
 login page
 single movie page
 favorite page
 analytics page
-
 server 
-
-add spinner $
-remove flex center from homepage and fix spinner to be in the middle of the screen ->  & the cards and the spinner will be in the center
-
-
-animation on cards $$$$$$$$$
-card animation dont work when change sections
-
-
 change data array values on request tv,movie,actor and save it into global state -> * (can change from tv to movies)
 user state
 select diffrent options from a section popular,trending....
 not show navbar on page 404 & login
 add logout button and make login state
 
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+animation on cards 
+animation on cards when change section 
+add spinner 
+
+fixing the background image not to change size when changing section items -> * on normal screen
+
+
+
+
+
+
 fix background image not to move when change diffrent section
 
+
+*******************/Mission/************************* 7/4
+
+homepage and navbar responsive
+
+handling diffrent request
+create actor interface

@@ -8,7 +8,9 @@
     cursor: pointer;
     box-shadow: 3px 10px 10px;
     animation-duration: 1s;
+    max-height: 300px;
     animation-name: CardAppernce;
+
 } 
 
 .card:hover{

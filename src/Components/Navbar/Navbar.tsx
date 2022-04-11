@@ -1,13 +1,11 @@
 import  React from 'react';
 import { useState } from 'react';
-import {MovieRequest,TvShowRequest} from '../utils/Axios'
-import { TmdbApiKey } from '../utils/data';
-import {useDispatch} from 'react-redux'
-import { saveData } from '../utils/store/reducers/movie';
-
+import { useDispatch, useSelector } from 'react-redux';
 import './Navbar.css'
 
+
 export interface IProps {
+
 }
 
 interface ActiveLinks{
@@ -16,14 +14,20 @@ interface ActiveLinks{
   id:number
   title:string
   imgUrl:string
-  getData():void
+  linkAction():void
   }[]
 }
 
 const Navbar:React.FC<IProps> = () => {
   
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
+  const GetDataFromRequest = async (seciton:string) =>{
+    
+
+
+  }
   
   
   const [active,SetActive] = useState<ActiveLinks>({
@@ -33,25 +37,24 @@ const Navbar:React.FC<IProps> = () => {
         id:1,
         imgUrl:'/images/video-player.png',
         title:'Movies'
-        ,getData:async function() {
-          const Responce = await MovieRequest.get(`/popular?api_key=${TmdbApiKey}`)
-          dispatch(saveData(Responce.data.results)) 
+        ,linkAction:function(){
         }
       },
       {
         id:2,
         imgUrl:'/images/tv-show.png',
         title:'Tv_shows'
-        ,getData:async function(){
-          const Responce = await TvShowRequest.get(`/popular?api_key=${TmdbApiKey}`)
-          dispatch(saveData(Responce.data.results)) 
+        ,linkAction:function(){
+          
+          GetDataFromRequest('tv')
+
         }
     },
       {
         id:3,
         imgUrl:'/images/actor.png',
         title:'Actors'
-        ,getData:function(){
+        ,linkAction:function(){
 
         }
     },
@@ -59,7 +62,7 @@ const Navbar:React.FC<IProps> = () => {
         id:4,
         imgUrl:'/images/star.png',
         title:'Favorites'
-        ,getData:function(){
+        ,linkAction:function(){
 
         }
     },
@@ -67,7 +70,7 @@ const Navbar:React.FC<IProps> = () => {
         id:5,
         imgUrl:'/images/bar-graph.png',
         title:'Statics'
-        ,getData:function(){
+        ,linkAction:function(){
 
         }
     },
@@ -75,7 +78,7 @@ const Navbar:React.FC<IProps> = () => {
         id:6,
         imgUrl:'/images/magnifier.png',
         title:'Search'
-        ,getData:function(){
+        ,linkAction:function(){
 
         }
     },
@@ -84,9 +87,9 @@ const Navbar:React.FC<IProps> = () => {
   
   
 
-  const toggleActive = (index:number,getData:Function):void =>{
+  const toggleActive = (index:number,linkAction:Function):void =>{
     SetActive({...active,activeLink:index})
-    getData()
+    linkAction()
   }
   
   const checkActive = (index:number):string =>{
@@ -101,7 +104,7 @@ const Navbar:React.FC<IProps> = () => {
 
   const links = active.links.map((p,index) =>{
   return (
-  <div key={index} className={ checkActive(index)} onClick={()=>{toggleActive(index,p.getData)}}>
+  <div key={index} className={ checkActive(index)} onClick={()=>{toggleActive(index,p.linkAction)}}>
       <img src={p.imgUrl} alt="" />
       <div className='link_text flex center' >
         <h3>{p.title}</h3>
