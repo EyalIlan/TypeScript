@@ -2,10 +2,7 @@ import React, {useEffect } from 'react';
 import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
-import {fetchDataFromApi, moviesData, saveData } from '../../utils/store/reducers/movie';
-import { loaderState, activeLoader,loaderOff } from '../../utils/store/reducers/loader';
-import { MovieRequest } from '../../utils/Axios'
-import { TmdbApiKey } from '../../utils/data';
+import {fetchDataFromApi, LoaderState, moviesData } from '../../utils/store/reducers/movie';
 import { useDispatch,useSelector } from 'react-redux'
 import Spinner from '../../UI/Spinner/Spinner';
 
@@ -17,23 +14,18 @@ const Hompage: React.FC<IProps> = (props) => {
 
 
   const dispatch = useDispatch()
-  const loader = useSelector(loaderState)
-
+  const loader = useSelector(LoaderState)
+  let movies = useSelector(moviesData)
+  
   useEffect(() => {
     
     const Request = async () => {
-      dispatch(activeLoader())
       dispatch(fetchDataFromApi())
-      dispatch(loaderOff())
     }
-    // const Responce = await MovieRequest.get(`/popular?api_key=${TmdbApiKey}`)
-    // dispatch(saveData(Responce.data.results))
-    
     Request()
   },[])
   
   
-  let movies = useSelector(moviesData)
   
 
   const data =  movies.map((p, index) => {

@@ -25,7 +25,7 @@ interface initalStateTyep {
         trendingType: string
         page: number
     }
-    status: string
+    loader: boolean
 }
 
 const initalState: initalStateTyep = {
@@ -35,7 +35,7 @@ const initalState: initalStateTyep = {
         trendingType: 'popular',
         page: 1
     },
-    status: ''
+    loader:false
 }
 
 
@@ -72,14 +72,14 @@ const dataSlice = createSlice({
     },
     extraReducers: {
         [fetchDataFromApi.pending.toString()]: (state, action) => {
-            state.status = 'loading'
+            state.loader = true
         },
         [fetchDataFromApi.fulfilled.toString()]: (state, action) => {
             state.value = action.payload.results
-            state.status = ''
+            state.loader = false
         },
         [fetchDataFromApi.rejected.toString()]: (state, action) => {
-            state.status = 'error'
+            state.loader = false
         }
      
     }
@@ -88,5 +88,7 @@ const dataSlice = createSlice({
 export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection} = dataSlice.actions
 
 export const moviesData = (state: RootState) => state.data.value
+export const LoaderState = (state: RootState) => state.data.loader
+
 
 export default dataSlice

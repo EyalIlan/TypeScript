@@ -1,6 +1,7 @@
 import  React from 'react';
 import { useState } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
+import { activeLoader, loaderOff,loaderState } from '../utils/store/reducers/loader';
 import { changeSection,fetchDataFromApi } from '../utils/store/reducers/movie';
 import './Navbar.css'
 
@@ -23,11 +24,16 @@ const Navbar:React.FC<IProps> = () => {
 
   const dispatch = useDispatch()
 
-  const getDataFromRequest = async (section:string) =>{
+  let loader =  useSelector(loaderState)
 
+  // console.log(loader);
+  
+
+  const getDataFromRequest = async (section:string) =>{
+    // dispatch(activeLoader())
     dispatch(changeSection(section))
     dispatch(fetchDataFromApi())
-  
+    // dispatch(loaderOff())
   }
   
   
