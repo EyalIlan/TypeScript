@@ -1,9 +1,9 @@
 import  React from 'react';
+import './SideNavbar.css'
 import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { activeLoader, loaderOff,loaderState } from '../utils/store/reducers/loader';
-import { changeSection,fetchDataFromApi } from '../utils/store/reducers/movie';
-import './Navbar.css'
+import {loaderState } from '../../utils/store/reducers/loader';
+import { changeSection,fetchDataFromApi } from '../../utils/store/reducers/movie';
 
 export interface IProps {
 
@@ -19,7 +19,7 @@ interface ActiveLinks{
   }[]
 }
 
-const Navbar:React.FC<IProps> = () => {
+const SideNavbar:React.FC<IProps> = () => {
   
 
   const dispatch = useDispatch()
@@ -63,7 +63,7 @@ const Navbar:React.FC<IProps> = () => {
         imgUrl:'/images/actor.png',
         title:'Actors'
         ,linkAction:function(){
-
+          getDataFromRequest('person')
         }
     },
       {
@@ -81,15 +81,7 @@ const Navbar:React.FC<IProps> = () => {
         ,linkAction:function(){
 
         }
-    },
-      {
-        id:6,
-        imgUrl:'/images/magnifier.png',
-        title:'Search'
-        ,linkAction:function(){
-
-        }
-    },
+    }
   ]
   })
   
@@ -115,7 +107,7 @@ const Navbar:React.FC<IProps> = () => {
   <div key={index} className={ checkActive(index)} onClick={()=>{toggleActive(index,p.linkAction)}}>
       <img src={p.imgUrl} alt="" />
       <div className='link_text flex center' >
-        <h3>{p.title}</h3>
+        <h5>{p.title}</h5>
       </div>
   </div>
     )
@@ -124,15 +116,20 @@ const Navbar:React.FC<IProps> = () => {
 
   return (    
         <div className='navbar_container'>
-          <div id='navbar_links' className='flex around flex_col primary_color'>
+          <div id='navbar_links' className='flex_col primary_color between flex'>
             
-         
+          <div>
            {links}
-      
+          </div>
+
+          <div id=''>
+              {/* <button className='btn btn_primary'>logout</button> */}
+          </div>
+
           </div>
         </div>
 
   );
 }
 
-export default Navbar
+export default SideNavbar

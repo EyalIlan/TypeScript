@@ -1,13 +1,17 @@
 
 .navbar_container{
     background-image: linear-gradient(#0026fd,#2a2a72);
-    min-height: 100vh;
-    width: 80px;
-    position: fixed;
+    color: white;
+    height: 100vh;
+    width: 40%;
+    flex: 5;
+    position: sticky;
+    top: 0;
+  
     transition: 0.2s width ease-in;
 }
 .navbar_container:hover{
-    width: 250px
+    width: 100%
 }
 
 .navbar_container:hover .link_text{
@@ -16,8 +20,9 @@
 }
 
 .navbar_link{
+    display: flex;
+    align-items: center;
     padding: 20px;
-    /* font-size: 16px; */
     cursor: pointer;
     transition: 0.1s transform ease-in-out;
 }
@@ -33,27 +38,21 @@
     background-color: white;
     color: blue;
 }
-
+/* change opacity to 0 */
 .link_text{
     width: 100%;
     text-align: center;
-    opacity: 0;
+    opacity: 0; 
     font-size: 18px;
-    transition: 0.2s opacity ease-in;
+    transition: 0.1s opacity ease-in;
 }
 
 
 
-#navbar_links{
-    height: 60%;
-}
 
 
 
 @media(max-width:1000px){
 
-    /* #navbar_links{
-      
-    } */
 
 }

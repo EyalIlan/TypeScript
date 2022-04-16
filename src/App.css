@@ -1,13 +1,17 @@
 
+:root{
+    --primary_color:white;
+    --secondary_color:#0026fd;
+}
+
 *
 {
     padding: 0;
     margin: 0;
+    box-sizing:border-box
 }
 
-html{
-    box-sizing:border-box
-} 
+
 
 body{
     font-family: sans-serif;
@@ -16,11 +20,11 @@ body{
 
 .App{
     min-height: 100vh;
+    /* min-width: 100vh; */
     position: relative;
     background-color: black;
     z-index: 2;
     animation-duration: 0.02s;
-    animation-name: CardAppernce;
 }
 
 .App::before{
@@ -33,17 +37,16 @@ body{
     background-repeat:repeat;
     background-image: url('/public/images/movieBG.jpg');
     opacity: 0.6;
-    z-index: -1;
+    z-index: -111;
 }
 
-.primary_color{
-    color: white;
-}
 
-.row{
-    width: 80%;
+.container{
+    width: 80vw;
     margin: auto;
 }
+
+
 
 .flex{
     display: flex;
@@ -57,10 +60,17 @@ body{
     justify-content: space-between;
 }
 
-.center{
+
+
+.justify_center{
     justify-content: center;
+}
+
+.align_center{
     align-items: center;
 }
+
+
 
 .flex_col{
     flex-direction: column;
@@ -68,17 +78,51 @@ body{
 
 .grid{
     display: grid;
-    grid-gap: 2.5rem;
+    grid-gap: 0.7rem;
 }
 .grid-col-5{
     grid-template-columns: repeat(5,1fr);
 }
 
-.box{
-    position: absolute;
-    left: 50%;
-    top:40%;
-    width: 100px;
-    height: 100px;
-    background-color: red;
+.grid_content_sidenav{
+    grid-template-columns: 14% 76% 10%;
 }
+
+
+.btn{
+    padding: 5px 20px;
+    font-weight: 500;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor:pointer
+}
+
+.btn:active{
+    transform: scale(0.97);
+}
+
+.icon{
+    cursor: pointer;
+    margin: 0 15px;
+    height: 20px;
+}
+
+.btn_primary{
+    background-color: #051a90;
+    color: white;
+}
+
+.btn_primary:hover{
+    background-color: #041055;
+}
+
+/* @media(max-width:900px){
+
+    .grid-col-5{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+  
+
+} */

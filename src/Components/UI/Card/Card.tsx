@@ -15,9 +15,9 @@ type Props = {
     
     return (
     <div className='card'>
-        <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:''} alt="poster movie" />
-        <div id='card_content' className='flex center primary_color'>
-            <h3>{title?title:name}</h3>
+        <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:''} alt="poster" />
+        <div id='card_content' className='flex justify_center align_center'>
+            <h5>{title?title:name}</h5>
         </div>
     </div>
   )

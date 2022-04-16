@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from '../store'
-import { movieIF } from '../../interface'
+import { CardIF } from '../../interface'
 import axios from "axios";
 import { TmdbApiKey } from "../../data";
 // {section:'movie',trendingType:'popular',page:0}
@@ -19,7 +19,7 @@ export const fetchDataFromApi = createAsyncThunk('movie/fetchData', async (paylo
 })
 
 interface initalStateTyep {
-    value: movieIF[]
+    value: CardIF[]
     section: {
         sectionType: string
         trendingType: string
@@ -44,7 +44,7 @@ const dataSlice = createSlice({
     initialState: initalState,
 
     reducers: {
-        saveData: (state, action: PayloadAction<movieIF[]>) => {
+        saveData: (state, action: PayloadAction<CardIF[]>) => {
             state.value = action.payload
         },
          
@@ -87,6 +87,8 @@ const dataSlice = createSlice({
 
 export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection} = dataSlice.actions
 
+
+export const SectionData = (state: RootState) => state.data.section
 export const moviesData = (state: RootState) => state.data.value
 export const LoaderState = (state: RootState) => state.data.loader
 

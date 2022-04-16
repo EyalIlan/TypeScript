@@ -1,0 +1,10 @@
+#top_navbar{
+    background-color: rgb(17, 8, 150);
+    color: var(--primary_color);
+    padding: 10px;
+}
+
+#top_navbar_left{
+    width: 100%;
+    /* justify-content: space-around; */
+}
