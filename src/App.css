@@ -36,18 +36,32 @@ body{
     bottom: 0;
     background-repeat:repeat;
     background-image: url('/public/images/movieBG.jpg');
-    opacity: 0.6;
+    opacity: 0.4;
     z-index: -111;
 }
 
 
 .container{
-    width: 80vw;
-    margin: auto;
+    padding: 20px 120px;
+    /* width: 80vw; */
+    /* margin: auto; */
+}
+/* INPUT */
+
+.input{
+    font-size: 15px;
+    padding: 0 8px;
+    outline: none;
 }
 
 
+/* ICON */
 
+.navbar_Icon{
+    height: 21px;
+}
+
+/* FLEX */
 .flex{
     display: flex;
 }
@@ -75,20 +89,20 @@ body{
 .flex_col{
     flex-direction: column;
 }
-
+/* GRID */
 .grid{
     display: grid;
-    grid-gap: 0.7rem;
+    grid-gap: 0.5rem;
 }
 .grid-col-5{
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(7,1fr);
 }
 
 .grid_content_sidenav{
     grid-template-columns: 14% 76% 10%;
 }
 
-
+/* BUttons */
 .btn{
     padding: 5px 20px;
     font-weight: 500;
@@ -102,11 +116,7 @@ body{
     transform: scale(0.97);
 }
 
-.icon{
-    cursor: pointer;
-    margin: 0 15px;
-    height: 20px;
-}
+
 
 .btn_primary{
     background-color: #051a90;

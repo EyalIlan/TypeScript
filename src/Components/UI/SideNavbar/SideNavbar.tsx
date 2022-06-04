@@ -84,17 +84,13 @@ const SideNavbar:React.FC<IProps> = () => {
     }
   ]
   })
-  
-  
-
   const toggleActive = (index:number,linkAction:Function):void =>{
     SetActive({...active,activeLink:index})
     linkAction()
   }
   
   const checkActive = (index:number):string =>{
-    
-    
+
     if(active.activeLink === index){
         return 'active flex navbar_link'
     }else{
@@ -105,7 +101,7 @@ const SideNavbar:React.FC<IProps> = () => {
   const links = active.links.map((p,index) =>{
   return (
   <div key={index} className={ checkActive(index)} onClick={()=>{toggleActive(index,p.linkAction)}}>
-      <img src={p.imgUrl} alt="" />
+      <img src={p.imgUrl} className="navbar_Icon" alt="" />
       <div className='link_text flex center' >
         <h5>{p.title}</h5>
       </div>
@@ -114,20 +110,18 @@ const SideNavbar:React.FC<IProps> = () => {
 
   })
 
-  return (    
-        <div className='navbar_container'>
-          <div id='navbar_links' className='flex_col primary_color between flex'>
-            
-          <div>
-           {links}
-          </div>
-
-          <div id=''>
-              {/* <button className='btn btn_primary'>logout</button> */}
-          </div>
-
-          </div>
+  return (
+   
+       <div className='navbar_container'>
+              <div className='link_text_title'>
+                <h2>TypeFlix</h2>
+              </div> 
+              {links}
+        <div className='modal_mode'>
+    
         </div>
+      </div>
+
 
   );
 }

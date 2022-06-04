@@ -23,10 +23,10 @@ export default function TopNavbar (props: IAppProps) {
 
   return (
     <div id='top_navbar'>
-        <div className='container flex between align_center'>
+        <div className='flex between align_center'>
                 <div className='flex align_center' id='top_navbar_left'>
                 <h2>Ty<span>p</span>eflix</h2>
-                <SearchBar SearchHandler = {SearchHandler}></SearchBar>
+                  <SearchBar SearchHandler = {SearchHandler}></SearchBar>
                 </div>
                 <button className='btn btn_primary'>Login</button>
         </div>

@@ -36,7 +36,7 @@ const Hompage: React.FC<IProps> = (props) => {
   
   
   const showCards = (
-    <div className='homepage'>
+    <div className='homepage container'>
         <div className='grid grid-col-5'>
          {data}
         </div>

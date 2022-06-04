@@ -14,13 +14,13 @@ function App() {
           
           
           <TopNavbar></TopNavbar>
-          <div className='grid grid_content_sidenav'>
+          {/* <div className='grid grid_content_sidenav'> */}
           <SideNavbar></SideNavbar>
           <Routes>
               <Route path='/'  element={<Hompage/>}/>
               <Route path = '*'  element={<Error404 />}/>
           </Routes>
-          </div>
+          {/* </div> */}
           
           <Routes>
           </Routes>
