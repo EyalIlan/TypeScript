@@ -28,7 +28,12 @@ export default function TopNavbar (props: IAppProps) {
                 <h2>Ty<span>p</span>eflix</h2>
                   <SearchBar SearchHandler = {SearchHandler}></SearchBar>
                 </div>
-                <button className='btn btn_primary'>Login</button>
+                <div>
+                  <div className='flex align_center'>
+                  <i className="fa-solid fa-jedi"></i>
+                  <button className='btn btn_tranpernt'>Login</button>
+                  </div>
+                </div>
         </div>
     </div>
   );

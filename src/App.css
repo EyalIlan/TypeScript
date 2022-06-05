@@ -127,6 +127,12 @@ body{
     background-color: #041055;
 }
 
+.btn_tranpernt{
+    background-color: transparent;
+    border: transparent;
+    color: white;
+}
+
 
 /* Colors */
 

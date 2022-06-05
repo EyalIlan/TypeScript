@@ -4,7 +4,7 @@ import './Card.css'
 
 type Props = {
     imageUrl?:string
-    rating?:number
+    rating:number
     descritption?:string
     title?:string
     name?:string
@@ -27,7 +27,7 @@ type Props = {
             <p>{year}</p>
         </div>
         <div id='card_title' className='flex justify_center align_center'>
-            <h4>{title?title:name}</h4>
+            <h4 style={{'lineHeight':'1.1'}}>{title?title:name}</h4>
         </div>
     
         </div>
