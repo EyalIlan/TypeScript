@@ -92,19 +92,22 @@ const SideNavbar:React.FC<IProps> = () => {
   const checkActive = (index:number):string =>{
 
     if(active.activeLink === index){
-        return 'active flex navbar_link'
+        return 'active'
     }else{
-      return 'flex navbar_link'
+       return 'unactive'
     }
   }
 
   const links = active.links.map((p,index) =>{
   return (
-  <div key={index} className={ checkActive(index)} onClick={()=>{toggleActive(index,p.linkAction)}}>
+  <div>
+  <div key={index} className='flex navbar_link' onClick={()=>{toggleActive(index,p.linkAction)}}>
       <img src={p.imgUrl} className="navbar_Icon" alt="" />
       <div className='link_text flex center' >
         <h5>{p.title}</h5>
       </div>
+  </div>
+      <hr  className={ checkActive(index)}/>
   </div>
     )
 

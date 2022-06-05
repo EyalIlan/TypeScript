@@ -37,7 +37,7 @@
 
 
 .navbar_container:hover{
-    width: 150px
+    width: 130px
 }
 
 .navbar_container:hover .link_text{
@@ -57,10 +57,14 @@
 }
 
 .active{
-    background-color: white;
-    color: blue;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    height: 5px;
+    width: 60%;
 }
-
+.unactive{
+    opacity: 0;
+}
 
 .navbar_link:hover{
     transform: translate(0,-10px);
