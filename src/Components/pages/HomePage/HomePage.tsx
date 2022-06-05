@@ -30,7 +30,7 @@ const Hompage: React.FC<IProps> = (props) => {
 
   const data =  movies.map((p, index) => {
     return (
-      <Card key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} name={p.name}></Card>
+      <Card key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date}></Card>
     )
   })
   

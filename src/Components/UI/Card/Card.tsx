@@ -8,16 +8,28 @@ type Props = {
     descritption?:string
     title?:string
     name?:string
+    year?:string
 }
 
- const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name}) => {
+ const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year}) => {
     
     
     return (
     <div className='card'>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
-        <div id='card_content' className='flex justify_center align_center'>
-            <h5>{title?title:name}</h5>
+        <div className='card_content'>
+
+        <div className='flex around align_center'>
+            <div className='flex'>
+            <i className="fa-solid fa-star yellow" style={{'margin':'0px 3px'}}></i>
+            <p>{rating}</p> 
+            </div>
+            <p>{year}</p>
+        </div>
+        <div id='card_title' className='flex justify_center align_center'>
+            <h4>{title?title:name}</h4>
+        </div>
+    
         </div>
     </div>
   )

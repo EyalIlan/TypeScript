@@ -127,6 +127,13 @@ body{
     background-color: #041055;
 }
 
+
+/* Colors */
+
+.yellow{
+    color: yellow;
+}
+
 /* @media(max-width:900px){
 
     .grid-col-5{

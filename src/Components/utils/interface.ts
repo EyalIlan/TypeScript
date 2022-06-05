@@ -6,5 +6,6 @@ export interface CardIF{
     vote_average:number
     poster_path?:string
     profile_path?:string
+    release_date:string
 }
 
