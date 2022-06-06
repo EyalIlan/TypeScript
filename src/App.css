@@ -15,8 +15,12 @@
 
 body{
     font-family: sans-serif;
+    color: white;
 }
 
+.bigText{
+    font-size: 32px;
+}
 
 .App{
     min-height: 100vh;

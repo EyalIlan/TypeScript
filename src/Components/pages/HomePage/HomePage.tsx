@@ -2,7 +2,7 @@ import React, {useEffect } from 'react';
 import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
-import {fetchDataFromApi, LoaderState, moviesData } from '../../utils/store/reducers/movie';
+import {fetchDataFromApi, LoaderState, moviesData,SectionData } from '../../utils/store/reducers/movie';
 import { useDispatch,useSelector } from 'react-redux'
 import Spinner from '../../UI/Spinner/Spinner';
 
@@ -16,6 +16,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const dispatch = useDispatch()
   const loader = useSelector(LoaderState)
   let movies = useSelector(moviesData)
+  const  SectionType = useSelector(SectionData)
   
   useEffect(() => {
     
@@ -34,9 +35,19 @@ const Hompage: React.FC<IProps> = (props) => {
     )
   })
   
+  console.log(
+    SectionType
+  );
   
   const showCards = (
     <div className='homepage container'>
+
+        <div id='hompage_header'>
+              <h2 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h2>
+              <div>
+              </div>
+        </div>
+
         <div className='grid grid-col-5'>
          {data}
         </div>

@@ -8,7 +8,10 @@
 }
 
 
-
+#hompage_header{
+    height: 25vh;
+    padding: 20px;
+}
 
 .page_section{
     min-height:100vh;
