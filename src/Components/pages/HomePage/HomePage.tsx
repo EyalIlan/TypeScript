@@ -5,6 +5,7 @@ import './HomePage.css'
 import {fetchDataFromApi, LoaderState, moviesData,SectionData } from '../../utils/store/reducers/movie';
 import { useDispatch,useSelector } from 'react-redux'
 import Spinner from '../../UI/Spinner/Spinner';
+import { trendinActionRequestsObject } from '../../utils/objects';
 
 export interface IProps {
 
@@ -27,7 +28,22 @@ const Hompage: React.FC<IProps> = (props) => {
   },[])
   
   
+  useEffect(() =>{
+    
+  })
   
+  let SectionActions
+
+  for(let section in trendinActionRequestsObject){  
+    if(section === SectionType.sectionType){   
+      SectionActions = trendinActionRequestsObject[section]
+    }
+  }
+  // console.log(SectionActions);
+  
+  SectionActions = SectionActions?.map( p =>{
+    return <button className='btn btn_primary'>{p}</button>
+  })
 
   const data =  movies.map((p, index) => {
     return (
@@ -35,15 +51,14 @@ const Hompage: React.FC<IProps> = (props) => {
     )
   })
   
-  console.log(
-    SectionType
-  );
-  
   const showCards = (
     <div className='homepage container'>
 
         <div id='hompage_header'>
-              <h2 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h2>
+              <h1 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h1>
+                <div className='flex justify_center'>
+                  {SectionActions}  
+                </div>
               <div>
               </div>
         </div>

@@ -19,7 +19,7 @@ body{
 }
 
 .bigText{
-    font-size: 32px;
+    font-size: 40px;
 }
 
 .App{
@@ -108,12 +108,13 @@ body{
 
 /* BUttons */
 .btn{
-    padding: 5px 20px;
+    padding: 8px 20px;
     font-weight: 500;
-    border: 2px solid;
+    border: none;
     border-radius: 10px;
     font-size: 15px;
-    cursor:pointer
+    cursor:pointer;
+    margin: 5px;
 }
 
 .btn:active{
@@ -123,12 +124,12 @@ body{
 
 
 .btn_primary{
-    background-color: #051a90;
+    background-color: #0244ea;
     color: white;
 }
 
 .btn_primary:hover{
-    background-color: #041055;
+    background-color: #051ca1;
 }
 
 .btn_tranpernt{

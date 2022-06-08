@@ -83,7 +83,7 @@
 .link_text_title{
     opacity: 0;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .navbar_container:hover .link_text_title{
