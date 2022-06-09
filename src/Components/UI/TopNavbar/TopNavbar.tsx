@@ -5,7 +5,7 @@ import './TopNavbar.css'
 import {tmdbUrl} from '../../utils/Axios'
 import { TmdbApiKey } from '../../utils/data';
 import { useDispatch, useSelector } from 'react-redux';
-import { LoaderState, saveData, SectionData,loaderOn,loaderOff } from '../../utils/store/reducers/movie';
+import {  saveData, SectionData,loaderOn,loaderOff } from '../../utils/store/reducers/movie';
 export interface IAppProps {
 
 }

@@ -12,9 +12,9 @@ type Props = {
 }
 
  const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year}) => {
-    
-    
+    console.log(imageUrl);
     return (
+    
     <div className='card'>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>

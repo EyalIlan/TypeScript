@@ -56,7 +56,6 @@ const Hompage: React.FC<IProps> = (props) => {
   
   const showCards = (
     <div className='homepage container'>
-
         <div id='hompage_header'>
               <h1 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h1>
                 <div className='flex justify_center'>
