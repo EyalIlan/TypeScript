@@ -63,9 +63,12 @@ const dataSlice = createSlice({
             state.section.sectionType =  action.payload
             state.section.page  = 1     
         },
-
-
-
+        loaderOn:(state) =>{
+            state.loader = true
+        },
+        loaderOff:(state) =>{
+            state.loader = false
+        },
         removeData: (state) => {
             state.value = []
         }
@@ -85,12 +88,13 @@ const dataSlice = createSlice({
     }
 })
 
-export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection} = dataSlice.actions
+export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection,loaderOn,loaderOff} = dataSlice.actions
 
 
 export const SectionData = (state: RootState) => state.data.section
 export const moviesData = (state: RootState) => state.data.value
 export const LoaderState = (state: RootState) => state.data.loader
+
 
 
 export default dataSlice

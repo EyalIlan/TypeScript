@@ -5,7 +5,7 @@ import './TopNavbar.css'
 import {tmdbUrl} from '../../utils/Axios'
 import { TmdbApiKey } from '../../utils/data';
 import { useDispatch, useSelector } from 'react-redux';
-import { saveData, SectionData } from '../../utils/store/reducers/movie';
+import { LoaderState, saveData, SectionData,loaderOn,loaderOff } from '../../utils/store/reducers/movie';
 export interface IAppProps {
 
 }
@@ -13,11 +13,13 @@ export interface IAppProps {
 export default function TopNavbar (props: IAppProps) {
 
   const dispatch = useDispatch()
-
   const SectionType = useSelector(SectionData)
-
+  
+  
   const  SearchHandler = async (e:string) =>{
+    dispatch(loaderOn())
     const {data} = await tmdbUrl.get(`search/${SectionType.sectionType}?api_key=${TmdbApiKey}&page=1&query=${e}`)
+    dispatch(loaderOff())
     dispatch(saveData(data.results))
   }
 

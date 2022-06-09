@@ -3,7 +3,7 @@ import './SideNavbar.css'
 import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import {loaderState } from '../../utils/store/reducers/loader';
-import { changeSection,fetchDataFromApi } from '../../utils/store/reducers/movie';
+import { changeSection,fetchDataFromApi,changeSelectiontype,changeSelectionPage } from '../../utils/store/reducers/movie';
 
 export interface IProps {
 
@@ -32,6 +32,8 @@ const SideNavbar:React.FC<IProps> = () => {
   const getDataFromRequest = async (section:string) =>{
     // dispatch(activeLoader())
     dispatch(changeSection(section))
+    dispatch(changeSelectiontype('popular'))
+    dispatch(changeSelectionPage(1))
     dispatch(fetchDataFromApi())
     // dispatch(loaderOff())
   }

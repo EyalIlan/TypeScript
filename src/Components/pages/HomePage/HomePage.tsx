@@ -22,7 +22,7 @@ const Hompage: React.FC<IProps> = (props) => {
   useEffect(() => {
     
     const Request = async () => {
-      // dispatch(fetchDataFromApi())
+      dispatch(fetchDataFromApi())
     }
     Request()
   },[])
@@ -77,8 +77,8 @@ const Hompage: React.FC<IProps> = (props) => {
 return (
 
     <div className='page_section flex center'>
-      {/* {loader?<Spinner></Spinner>:showCards} */}
-      <Spinner></Spinner>
+      {loader?<Spinner></Spinner>:showCards}
+      {/* <Spinner></Spinner> */}
     </div>
 
   );
