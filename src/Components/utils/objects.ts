@@ -1,27 +1,27 @@
 
 
 type tplotOptions = {
-    [key: string]: string[] | undefined
+    [key: string]: {value:string,text:string}[] | undefined
 }
 
 export const trendinActionRequestsObject:tplotOptions ={
     movie:[
-        'latest',
-        'now_playing',
-        'popular',
-        'top_rated',
-        'upcoming'
+        {value:'latest',text:'Latest'},
+        {value:'now_playing',text:'Now Playing'},
+        {value:'popular',text:'Popular'},
+        {value:'top_rated',text:'Top Rated'},
+        {value:'upcoming',text:'Upcoming'},
     ],
     tv:[
-        'latest',
-        'airing_today',
-        'on_the_air',
-        'popular',
-        'top_rated'
+        {value:'latest',text:'Latest'},
+        {value:'airing_today',text:'Airing Today'},
+        {value:'on_the_air',text:'On The Air'},
+        {value:'popular',text:'Popular'},
+        {value:'top_rated',text:'Top Rated'},
     ],
     person:[
-        'latest',
-        'popular'
+        {value:'latest',text:'Latest'},
+        {value:'popular',text:'Popular'}
     ]
 
 }

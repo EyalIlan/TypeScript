@@ -41,8 +41,8 @@ const Hompage: React.FC<IProps> = (props) => {
   }
   // console.log(SectionActions);
   
-  SectionActions = SectionActions?.map( p =>{
-    return <button className='btn btn_primary'>{p}</button>
+  SectionActions = SectionActions?.map( (p,index) =>{
+    return <button key={index} className='btn btn_primary'>{p.text}</button>
   })
 
   const data =  movies.map((p, index) => {

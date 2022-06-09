@@ -9,7 +9,6 @@ type Props = {
 const SearchBar:React.FC<Props> = ({SearchHandler}) => {
   
   const [searchTerm,SetSearchTerm] = useState('')  
-  
   const SubmitSearchTerm = ()=>{
     SearchHandler(searchTerm)
   }
