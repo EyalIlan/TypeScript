@@ -2,7 +2,7 @@ import React, {useEffect } from 'react';
 import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
-import {fetchDataFromApi, LoaderState, moviesData,SectionData } from '../../utils/store/reducers/movie';
+import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontype } from '../../utils/store/reducers/movie';
 import { useDispatch,useSelector } from 'react-redux'
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
@@ -28,21 +28,24 @@ const Hompage: React.FC<IProps> = (props) => {
   },[])
   
   
-  useEffect(() =>{
-    
-  })
+  const changeTrendingType = async (trending:string) =>{
+    // console.log(trending);
+  
+     dispatch(changeSelectiontype(trending))
+    await dispatch(fetchDataFromApi())
+  }
   
   let SectionActions
+
 
   for(let section in trendinActionRequestsObject){  
     if(section === SectionType.sectionType){   
       SectionActions = trendinActionRequestsObject[section]
     }
   }
-  // console.log(SectionActions);
   
   SectionActions = SectionActions?.map( (p,index) =>{
-    return <button key={index} className='btn btn_primary'>{p.text}</button>
+    return <button key={index} className='btn btn_primary' onClick={() =>{changeTrendingType(p.value)}}>{p.text}</button>
   })
 
   const data =  movies.map((p, index) => {
