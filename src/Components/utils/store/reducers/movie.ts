@@ -25,7 +25,9 @@ interface initalStateTyep {
         trendingType: string
         page: number
     }
-    loader: boolean
+    loader: boolean,
+    numberOfPages:number,
+    page:number
 }
 
 const initalState: initalStateTyep = {
@@ -35,7 +37,9 @@ const initalState: initalStateTyep = {
         trendingType: 'popular',
         page: 1
     },
-    loader:false
+    loader:false,
+    numberOfPages:0,
+    page:1
 }
 
 
@@ -73,11 +77,13 @@ const dataSlice = createSlice({
             state.value = []
         }
     },
+    //
     extraReducers: {
         [fetchDataFromApi.pending.toString()]: (state, action) => {
             state.loader = true
         },
         [fetchDataFromApi.fulfilled.toString()]: (state, action) => {
+            state.numberOfPages = action.payload.total_pages
             state.value = action.payload.results
             state.loader = false
         },
@@ -94,7 +100,7 @@ export const { saveData, removeData,changeSelectionPage,changeSelectiontype,chan
 export const SectionData = (state: RootState) => state.data.section
 export const moviesData = (state: RootState) => state.data.value
 export const LoaderState = (state: RootState) => state.data.loader
-
-
+export const NumberOfPages = (state:RootState) => state.data.numberOfPages
+export const currentPage = (state:RootState) => state.data.page
 
 export default dataSlice

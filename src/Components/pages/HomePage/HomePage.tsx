@@ -2,11 +2,11 @@ import React, {useEffect } from 'react';
 import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
-import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontype } from '../../utils/store/reducers/movie';
 import { useDispatch,useSelector } from 'react-redux'
+import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontype } from '../../utils/store/reducers/movie';
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
-
+import Pageination from '../../UI/Pageination/Pageination';
 export interface IProps {
 
 }
@@ -15,10 +15,11 @@ const Hompage: React.FC<IProps> = (props) => {
 
 
   const dispatch = useDispatch()
-  const loader = useSelector(LoaderState)
-  let movies = useSelector(moviesData)
-  const  SectionType = useSelector(SectionData)
   
+  const loader = useSelector(LoaderState)
+  const movies = useSelector(moviesData)
+  const SectionType = useSelector(SectionData)
+
   useEffect(() => {
     
     const Request = async () => {
@@ -29,10 +30,9 @@ const Hompage: React.FC<IProps> = (props) => {
   
   
   const changeTrendingType = async (trending:string) =>{
-    // console.log(trending);
-  
+
      dispatch(changeSelectiontype(trending))
-    await dispatch(fetchDataFromApi())
+     dispatch(fetchDataFromApi())
   }
   
   let SectionActions
@@ -61,6 +61,9 @@ const Hompage: React.FC<IProps> = (props) => {
                 <div className='flex justify_center'>
                   {SectionActions}  
                 </div>
+                <div>
+                  <Pageination></Pageination>
+                </div>
               <div>
               </div>
         </div>
@@ -77,7 +80,6 @@ return (
 
     <div className='page_section flex center'>
       {loader?<Spinner></Spinner>:showCards}
-      {/* <Spinner></Spinner> */}
     </div>
 
   );
