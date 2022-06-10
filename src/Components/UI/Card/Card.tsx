@@ -20,7 +20,7 @@ type Props = {
 
         <div className='flex around align_center'>
             <div className='flex'>
-            <i className="fa-solid fa-star yellow" style={{'margin':'0px 3px'}}></i>
+           {rating?<i className="fa-solid fa-star yellow" style={{'margin':'0px 3px'}}></i>:''}
             <p>{rating}</p> 
             </div>
             <p>{year}</p>
