@@ -67,7 +67,7 @@ const Hompage: React.FC<IProps> = (props) => {
                   {SectionActions}  
                 </div>
                 <div>
-                  <Pageination></Pageination>
+                  <Pageination footer ={false}></Pageination>
                 </div>
               <div>
               </div>
@@ -87,7 +87,7 @@ return (
       <div className='flex center'>  
       {loader?<Spinner></Spinner>:showCards}
       </div>
-      <Pageination></Pageination>
+      <Pageination footer ={true} ></Pageination>
       <Footer></Footer>
     </div>
 

@@ -1,6 +1,8 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+    
+}
 
 const footer = (props: Props) => {
   return (

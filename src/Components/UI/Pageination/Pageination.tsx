@@ -5,13 +5,13 @@ import {NumberOfPages,currentPage,changeSelectionPage,fetchDataFromApi} from '..
 import './Pageination.css'
 
 interface Props {
-
+    footer:boolean
 }
 
 
 
 
-const Pageination:React.FC<Props> = () => {
+const Pageination:React.FC<Props> = ({footer}) => {
  
     
     const dispatch = useDispatch()
@@ -42,9 +42,16 @@ const Pageination:React.FC<Props> = () => {
         pages.sort((a,b) =>{
             return a-b
         })
+       console.log(footer);
        
         Pages = pages.map((p,index) =>{
-            return (<button key={index} className={page === p?'active page_select_button':''+ ' page_select_button btn_click btn_primary'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
+
+            if(footer){
+                return (<button key={index} className={page === p?'active page_select_button':'page_select_button  btn_secondary'  } onClick={() =>{changePageHandler(p)}}>{p}</button>)
+            }else{
+                return (<button key={index} className={page === p?'active page_select_button':'page_select_button  btn_primary'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
+            }
+
         })       
             
      

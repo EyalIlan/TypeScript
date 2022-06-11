@@ -140,12 +140,29 @@ body{
     background-color: #051ca1;
 }
 
+.btn_secondary{
+    background-color: #2a2a72;
+    color: white;
+}
+
+.btn_secondary:hover{
+    background-color:#1e1e52;
+}
+
 .btn_tranpernt{
     background-color: transparent;
     border: transparent;
     color: white;
 }
 
+.page_select_button{
+    padding:9px;
+    margin: 0 8px;
+    border: 1px solid white;
+    /* background-color: blue;
+    border: 1px solid white; */
+    cursor: pointer;
+}
 
 /* Colors */
 
@@ -158,6 +175,10 @@ body{
 }
 .primeColor{
     background-color: #0026fd;
+}
+
+.secondary_color{
+    color: white;
 }
 
 .ThirdColorBg{
