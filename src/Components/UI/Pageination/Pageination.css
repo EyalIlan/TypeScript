@@ -10,7 +10,7 @@
 .page_select_button{
     padding:7px;
     margin: 0 8px;
-    background-color: blue;
-    border: 1px solid white;
+    /* background-color: blue;
+    border: 1px solid white; */
     cursor: pointer;
 }

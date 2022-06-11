@@ -109,7 +109,7 @@ const SideNavbar:React.FC<IProps> = () => {
         <h5>{p.title}</h5>
       </div>
   </div>
-      <hr  className={ checkActive(index)}/>
+      <hr  className={checkActive(index) + ' bottom_border'}/>
   </div>
     )
 

@@ -56,11 +56,15 @@
     transition: 0.1s transform ease-in-out;
 }
 
-.active{
-    background-color: rgb(255, 255, 255);
+.bottom_border{
     margin: auto;
     height: 5px;
     width: 60%;
+}
+
+.active{
+    background-color: rgb(255, 255, 255);
+    color: blue;
 }
 .unactive{
     opacity: 0;

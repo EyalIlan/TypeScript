@@ -44,7 +44,7 @@ const Pageination:React.FC<Props> = () => {
         })
        
         Pages = pages.map((p,index) =>{
-            return <button key={index} className='page_select_button btn_click btn_primary' onClick={() =>{changePageHandler(p)}}>{p}</button>
+            return (<button key={index} className={page === p?'active page_select_button':''+ ' page_select_button btn_click btn_primary'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
         })       
             
      
