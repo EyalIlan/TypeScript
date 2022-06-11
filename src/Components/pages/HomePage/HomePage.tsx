@@ -45,7 +45,7 @@ const Hompage: React.FC<IProps> = (props) => {
   }
   
   SectionActions = SectionActions?.map( (p,index) =>{
-    return <button key={index} className='btn btn_primary' onClick={() =>{changeTrendingType(p.value)}}>{p.text}</button>
+    return <button key={index} className='btn btn_click btn_primary' onClick={() =>{changeTrendingType(p.value)}}>{p.text}</button>
   })
 
   const data =  movies.map((p, index) => {
@@ -78,8 +78,11 @@ const Hompage: React.FC<IProps> = (props) => {
 
 return (
 
-    <div className='page_section flex center'>
+    <div className='page_section '>
+      <div className='flex center'>  
       {loader?<Spinner></Spinner>:showCards}
+      </div>
+      <Pageination></Pageination>
     </div>
 
   );

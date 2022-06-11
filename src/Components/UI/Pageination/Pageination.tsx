@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {useDispatch,useSelector} from 'react-redux'
 import {NumberOfPages,currentPage} from '../../utils/store/reducers/movie'
+import './Pageination.css'
 
 interface Props {
 
@@ -11,29 +12,40 @@ const Pageination:React.FC<Props> = () => {
 
     const dispatch = useDispatch()
     const numberOfPages = useSelector(NumberOfPages)
-    // const page = useSelector(currentPage)
-    const page = 10
-
-    let pages = [] 
-
-    for (let i = 0; i <= 4; i++) {
+    const page = useSelector(currentPage)
+    let pages:number[] = [] 
+    let Pages
+    
+        
+        for (let i = 0; i <= 4; i++) {
+           
+           if(page + i <= numberOfPages ){
+                pages.push(page + i)
+           }
+           if (page -i > 0 && (page-i !== page)) {
+               pages.push(page - i )
+           } 
+    
+        }
+    
+        pages.sort((a,b) =>{
+            return a-b
+        })
        
-       if(page + i <= numberOfPages ){
-            pages.push(page + i)
-       }
-       if (page -i > 0 && (page-i !== page)) {
-           pages.push(page - i )
-       } 
+        Pages = pages.map((p,index) =>{
+            return <button key={index} className='page_select_button btn_click btn_primary'>{p}</button>
+        })       
+            
+     
+        
 
-    }
-
-    pages = pages.sort()
-
-    console.log(pages);
+   
     
 
     return (
-    <div>Pageination</div>
+    <div className='pages_selection'>
+        {Pages}
+    </div>
   )
 }
 
