@@ -65,6 +65,7 @@
 .active{
     background-color: rgb(255, 255, 255);
     color: blue;
+    
 }
 .unactive{
     opacity: 0;

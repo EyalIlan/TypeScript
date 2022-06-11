@@ -8,9 +8,9 @@
 }
 
 
-#hompage_header{
-    height: 25vh;
-    padding: 20px 0;
+.section_header{
+    min-height: 7vh;
+    padding: 15px 0;
 }
 
 .page_section{

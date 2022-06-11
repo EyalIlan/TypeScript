@@ -153,6 +153,17 @@ body{
     color: yellow;
 }
 
+.primeColorBg{
+    background-color: #0026fd;
+}
+.primeColor{
+    background-color: #0026fd;
+}
+
+.ThirdColorBg{
+    background-color: #2a2a72;
+}
+
 /* @media(max-width:900px){
 
     .grid-col-5{

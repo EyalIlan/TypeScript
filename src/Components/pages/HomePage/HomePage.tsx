@@ -7,6 +7,8 @@ import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontyp
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
 import Pageination from '../../UI/Pageination/Pageination';
+import Footer from '../../UI/footer/footer';
+
 export interface IProps {
 
 }
@@ -59,7 +61,7 @@ const Hompage: React.FC<IProps> = (props) => {
   
   const showCards = (
     <div className='homepage container'>
-        <div id='hompage_header'>
+        <div className='section_header'>
               <h1 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h1>
                 <div className='flex justify_center'>
                   {SectionActions}  
@@ -86,6 +88,7 @@ return (
       {loader?<Spinner></Spinner>:showCards}
       </div>
       <Pageination></Pageination>
+      <Footer></Footer>
     </div>
 
   );

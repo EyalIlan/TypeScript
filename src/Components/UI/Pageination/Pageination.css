@@ -8,8 +8,9 @@
 }
 
 .page_select_button{
-    padding:7px;
+    padding:9px;
     margin: 0 8px;
+    border: 1px solid white;
     /* background-color: blue;
     border: 1px solid white; */
     cursor: pointer;
