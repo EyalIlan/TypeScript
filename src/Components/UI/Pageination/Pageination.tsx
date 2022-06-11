@@ -1,21 +1,32 @@
 import React, { useEffect } from 'react'
 
 import {useDispatch,useSelector} from 'react-redux'
-import {NumberOfPages,currentPage} from '../../utils/store/reducers/movie'
+import {NumberOfPages,currentPage,changeSelectionPage,fetchDataFromApi} from '../../utils/store/reducers/movie'
 import './Pageination.css'
 
 interface Props {
 
 }
 
-const Pageination:React.FC<Props> = () => {
 
+
+
+const Pageination:React.FC<Props> = () => {
+ 
+    
     const dispatch = useDispatch()
     const numberOfPages = useSelector(NumberOfPages)
     const page = useSelector(currentPage)
     let pages:number[] = [] 
     let Pages
     
+    const changePageHandler = (pageNumber:number) =>{
+        dispatch(changeSelectionPage(pageNumber))
+        dispatch(fetchDataFromApi())
+       
+    
+    }
+
         
         for (let i = 0; i <= 4; i++) {
            
@@ -33,7 +44,7 @@ const Pageination:React.FC<Props> = () => {
         })
        
         Pages = pages.map((p,index) =>{
-            return <button key={index} className='page_select_button btn_click btn_primary'>{p}</button>
+            return <button key={index} className='page_select_button btn_click btn_primary' onClick={() =>{changePageHandler(p)}}>{p}</button>
         })       
             
      

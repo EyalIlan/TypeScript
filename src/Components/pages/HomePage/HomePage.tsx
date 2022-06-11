@@ -20,6 +20,9 @@ const Hompage: React.FC<IProps> = (props) => {
   const movies = useSelector(moviesData)
   const SectionType = useSelector(SectionData)
 
+
+  
+
   useEffect(() => {
     
     const Request = async () => {

@@ -27,7 +27,6 @@ interface initalStateTyep {
     }
     loader: boolean,
     numberOfPages:number,
-    page:number
 }
 
 const initalState: initalStateTyep = {
@@ -39,7 +38,6 @@ const initalState: initalStateTyep = {
     },
     loader:false,
     numberOfPages:0,
-    page:1
 }
 
 
@@ -101,6 +99,6 @@ export const SectionData = (state: RootState) => state.data.section
 export const moviesData = (state: RootState) => state.data.value
 export const LoaderState = (state: RootState) => state.data.loader
 export const NumberOfPages = (state:RootState) => state.data.numberOfPages
-export const currentPage = (state:RootState) => state.data.page
+export const currentPage = (state:RootState) => state.data.section.page
 
 export default dataSlice
