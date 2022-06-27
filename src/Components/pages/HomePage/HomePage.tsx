@@ -19,7 +19,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const loader = useSelector(LoaderState)
   const movies = useSelector(moviesData)
   const SectionType = useSelector(SectionData)
-
+ 
 
   
 
@@ -39,11 +39,20 @@ const Hompage: React.FC<IProps> = (props) => {
   }
   
   let SectionActions
-
+  let trending:string = ''
 
   for(let section in trendinActionRequestsObject){  
     if(section === SectionType.sectionType){   
       SectionActions = trendinActionRequestsObject[section]
+      SectionActions?.forEach(p =>{
+
+          console.log();
+          
+
+          if(p.value === SectionType.trendingType.substring(1, SectionType.trendingType.length)){
+               trending = p.text
+          }
+      })
     }
   }
   
@@ -60,7 +69,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const showCards = (
     <div className='homepage container'>
         <div className='section_header'>
-              <h1 className='bigText'>{SectionType.trendingType} {SectionType.sectionType}</h1>
+              <h1 className='bigText'>{trending} {SectionType.sectionType}</h1>
                 <div className='flex justify_center'>
                   {SectionActions}  
                 </div>

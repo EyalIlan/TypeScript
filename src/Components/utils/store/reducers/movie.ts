@@ -9,7 +9,6 @@ export const fetchDataFromApi = createAsyncThunk('movie/fetchData', async (paylo
     const state: any = getState()
     let { page, trendingType, sectionType,search,query } = state.data.section
 
-    console.log(`${search}${sectionType}${trendingType}?api_key=${TmdbApiKey}&page=${page}`);
     
     try {
                             // TmdbUrl.get(`search/${SectionType.sectionType}?api_key=${TmdbApiKey}&page=${page}&query=${e}`)
