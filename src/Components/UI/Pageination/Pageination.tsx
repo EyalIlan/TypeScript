@@ -26,8 +26,6 @@ const Pageination:React.FC<Props> = ({footer}) => {
        
     
     }
-
-        
         for (let i = 0; i <= 4; i++) {
            
            if(page + i <= numberOfPages ){
@@ -42,7 +40,6 @@ const Pageination:React.FC<Props> = ({footer}) => {
         pages.sort((a,b) =>{
             return a-b
         })
-       console.log(footer);
        
         Pages = pages.map((p,index) =>{
 

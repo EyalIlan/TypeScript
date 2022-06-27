@@ -16,7 +16,6 @@ const SearchBar:React.FC<Props> = ({SearchHandler}) => {
   return (
     <div className='flex align_center' id='searchbar_bar'>
         <div className='icon_container'>
-          {/* <img src="/images/magnifier.png" alt="" className='icon' onClick={SubmitSearchTerm}/> */}
           <i className="fa-solid fa-magnifying-glass" onClick={SubmitSearchTerm}></i>
         </div>
         <input className='input' type="text" placeholder='Enter Search Term' onChange={(e) =>{ SetSearchTerm(e.target.value)}} />

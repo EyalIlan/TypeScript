@@ -1,16 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from '../store'
 import { CardIF } from '../../interface'
-import axios from "axios";
 import { TmdbApiKey } from "../../data";
+import { TmdbUrl } from "../../Axios";
 // {section:'movie',trendingType:'popular',page:0}
 export const fetchDataFromApi = createAsyncThunk('movie/fetchData', async (payload, { dispatch, getState }) => {
 
     const state: any = getState()
-    let { page, trendingType, sectionType } = state.data.section
+    let { page, trendingType, sectionType,search,query } = state.data.section
 
+    console.log(`${search}${sectionType}${trendingType}?api_key=${TmdbApiKey}&page=${page}`);
+    
     try {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/${sectionType}/${trendingType}?api_key=${TmdbApiKey}&page=${page}`)
+                            // TmdbUrl.get(`search/${SectionType.sectionType}?api_key=${TmdbApiKey}&page=${page}&query=${e}`)
+        const { data } = await TmdbUrl.get(`${search}${sectionType}${trendingType}?api_key=${TmdbApiKey}&page=${page}&query=${query}`)
         return data
     }
     catch (e) {
@@ -21,6 +24,8 @@ export const fetchDataFromApi = createAsyncThunk('movie/fetchData', async (paylo
 interface initalStateTyep {
     value: CardIF[]
     section: {
+        search:string
+        query:string
         sectionType: string
         trendingType: string
         page: number
@@ -32,8 +37,10 @@ interface initalStateTyep {
 const initalState: initalStateTyep = {
     value: [],
     section: {
+        search:'',
         sectionType: 'movie',
-        trendingType: 'popular',
+        trendingType: '/popular',
+        query:'',
         page: 1
     },
     loader:false,
@@ -57,12 +64,15 @@ const dataSlice = createSlice({
         },
         changeSelectiontype:(state,action) =>{
 
-            state.section.trendingType =  action.payload
+            state.section.trendingType = '/' + action.payload 
+            state.section.query = ''
+            state.section.search = ''
             state.section.page  = 1  
         },
         changeSection:(state,action) =>{
-
-            state.section.sectionType =  action.payload
+            state.section.search = ''
+            state.section.query = ''
+            state.section.sectionType =  action.payload 
             state.section.page  = 1     
         },
         loaderOn:(state) =>{
@@ -73,6 +83,12 @@ const dataSlice = createSlice({
         },
         removeData: (state) => {
             state.value = []
+        },
+        search:(state,action) =>{
+            state.section.trendingType = ''
+            state.section.query = action.payload
+            state.section.search = 'search/'
+            state.section.page = 1
         }
     },
     //
@@ -92,7 +108,7 @@ const dataSlice = createSlice({
     }
 })
 
-export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection,loaderOn,loaderOff} = dataSlice.actions
+export const { saveData, removeData,changeSelectionPage,changeSelectiontype,changeSection,loaderOn,loaderOff,search} = dataSlice.actions
 
 
 export const SectionData = (state: RootState) => state.data.section

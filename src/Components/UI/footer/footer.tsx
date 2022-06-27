@@ -1,14 +1,15 @@
 import React from 'react'
+import './footer.css'
 
 type Props = {
-    
+
 }
 
 const footer = (props: Props) => {
   return (
-    <div className='section_header ThirdColorBg flex justify_center align_center'>
+    <div id='footer' className='section_header ThirdColorBg flex justify_center align_center'>
         <p>
-            all copy rights reserved to @ Eyal Ilan 
+            all copy rights reserved 
        </p>
     </div>
   )

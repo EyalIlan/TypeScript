@@ -7,8 +7,6 @@ import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontyp
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
 import Pageination from '../../UI/Pageination/Pageination';
-import Footer from '../../UI/footer/footer';
-
 export interface IProps {
 
 }
@@ -83,12 +81,12 @@ const Hompage: React.FC<IProps> = (props) => {
 
 return (
 
-    <div className='page_section '>
+    <div>
       <div className='flex center'>  
       {loader?<Spinner></Spinner>:showCards}
       </div>
       <Pageination footer ={true} ></Pageination>
-      <Footer></Footer>
+     
     </div>
 
   );

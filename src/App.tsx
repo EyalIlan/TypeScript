@@ -5,6 +5,7 @@ import Hompage from './Components/pages/HomePage/HomePage';
 import SideNavbar from './Components/UI/SideNavbar/SideNavbar'
 import Error404 from './Components/pages/404Error/Error404';
 import TopNavbar from './Components/UI/TopNavbar/TopNavbar';
+import Footer from './Components/UI/footer/footer';
 function App() {
 
 
@@ -14,17 +15,15 @@ function App() {
           
           
           <TopNavbar></TopNavbar>
-          {/* <div className='grid grid_content_sidenav'> */}
           <SideNavbar></SideNavbar>
           <Routes>
               <Route path='/'  element={<Hompage/>}/>
               <Route path = '*'  element={<Error404 />}/>
           </Routes>
-          {/* </div> */}
-          
           <Routes>
           </Routes>
       </div>
+      <Footer></Footer>
     </BrowserRouter>
 
   );

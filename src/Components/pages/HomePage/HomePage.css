@@ -1,8 +1,5 @@
 
 .homepage{
-    /* padding: 20px;
-    margin-right: 80px;
-    padding: 40px; */
     margin-top: 30px;
     position: relative;
 }
@@ -13,12 +10,7 @@
     padding: 15px 0;
 }
 
-.page_section{
-    min-height:100vh;
-}
-
 @media(max-width:900px){
-
     .homepage{
         padding: 40px;
         margin-right: 0;
