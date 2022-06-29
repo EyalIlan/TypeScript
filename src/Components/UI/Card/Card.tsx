@@ -15,21 +15,31 @@ type Props = {
    
    
    let Year = year?.split('-')[0]
-   
+   let Title = ''
+   if((title !== undefined && title.length>20) || (name !== undefined && name.length>20)){
+    Title = title?.substring(0,33)  || name?.substring(0,33)  || '' 
+   }
+
+
     return (
     <div className='card'>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>
 
-        <div className='flex around align_center'>
-        <div className='flex'>
-           {rating?<i className="fa-solid fa-star yellow mediumText" style={{'margin':'0px 3px'}}></i>:''}
+        <div >
+        <div className='flex around'>
+            
+            <div className='flex'>
+            {rating?<i className="fa-solid fa-star yellow mediumText" style={{'margin':'0px 3px'}}></i>:''}
             <p className='mediumText'>{rating}</p> 
             </div>
+            
             <p className='mediumText'>{Year}</p>
         </div>
-        <div id='card_title' className='flex justify_center align_center'>
-            <h4 className='mediumText' style={{'lineHeight':'1.1'}}>{title?title:name}</h4>
+        </div>
+
+        <div id='card_title' className='test'>
+            <h4 className='mediumText' style={{'lineHeight':'1.1'}}>{Title?Title:title?title:name}</h4>
         </div>
     
         </div>
