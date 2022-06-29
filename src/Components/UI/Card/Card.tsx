@@ -12,21 +12,24 @@ type Props = {
 }
 
  const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year}) => {
+   
+   
+   let Year = year?.split('-')[0]
+   
     return (
-    
     <div className='card'>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>
 
         <div className='flex around align_center'>
-            <div className='flex'>
-           {rating?<i className="fa-solid fa-star yellow" style={{'margin':'0px 3px'}}></i>:''}
-            <p>{rating}</p> 
+        <div className='flex'>
+           {rating?<i className="fa-solid fa-star yellow mediumText" style={{'margin':'0px 3px'}}></i>:''}
+            <p className='mediumText'>{rating}</p> 
             </div>
-            <p>{year}</p>
+            <p className='mediumText'>{Year}</p>
         </div>
         <div id='card_title' className='flex justify_center align_center'>
-            <h4 style={{'lineHeight':'1.1'}}>{title?title:name}</h4>
+            <h4 className='mediumText' style={{'lineHeight':'1.1'}}>{title?title:name}</h4>
         </div>
     
         </div>

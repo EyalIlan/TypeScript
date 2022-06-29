@@ -62,14 +62,7 @@
     width: 60%;
 }
 
-.active{
-    background-color: rgb(255, 255, 255);
-    color: blue;
-    
-}
-.unactive{
-    opacity: 0;
-}
+
 
 .navbar_link:hover{
     transform: translate(0,-10px);
@@ -99,7 +92,9 @@
 
 
 
-/* @media(max-width:1000px){
+@media(max-width:900px){
+    .navbar_container{
+        display: none;
+    }
 
-
-} */
+}

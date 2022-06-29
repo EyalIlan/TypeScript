@@ -3,7 +3,7 @@ import Card from '../../UI/Card/Card'
 
 import './HomePage.css'
 import { useDispatch,useSelector } from 'react-redux'
-import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontype } from '../../utils/store/reducers/movie';
+import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontype,SearchTerm } from '../../utils/store/reducers/movie';
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
 import Pageination from '../../UI/Pageination/Pageination';
@@ -19,7 +19,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const loader = useSelector(LoaderState)
   const movies = useSelector(moviesData)
   const SectionType = useSelector(SectionData)
- 
+  const searchTerm = useSelector(SearchTerm)
 
   
 
@@ -65,6 +65,8 @@ const Hompage: React.FC<IProps> = (props) => {
   })
 
   const data =  movies.map((p, index) => {
+
+
     return (
       <Card key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date}></Card>
     )
@@ -73,7 +75,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const showCards = (
     <div className='homepage container'>
         <div className='section_header'>
-              <h1 className='bigText'>{trending} {title}</h1>
+              <h1 className='bigText'>{trending || searchTerm } {title}</h1>
                 <div className='flex justify_center'>
                   {SectionActions}  
                 </div>

@@ -115,5 +115,5 @@ export const moviesData = (state: RootState) => state.data.value
 export const LoaderState = (state: RootState) => state.data.loader
 export const NumberOfPages = (state:RootState) => state.data.numberOfPages
 export const currentPage = (state:RootState) => state.data.section.page
-
+export const SearchTerm = (state:RootState) => state.data.section.query
 export default dataSlice
