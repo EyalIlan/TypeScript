@@ -1,16 +1,21 @@
 import React,{ useState } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { search,fetchDataFromApi } from '../../utils/store/reducers/movie'
 import './SearchBar.css'
-
 type Props = {
-  SearchHandler:Function
+
 }
 
-const SearchBar:React.FC<Props> = ({SearchHandler}) => {
+const SearchBar:React.FC<Props> = () => {
   
   const [searchTerm,SetSearchTerm] = useState('')  
+
+  const dispatch = useDispatch()
+
+
   const SubmitSearchTerm = ()=>{
-    SearchHandler(searchTerm)
+    dispatch(search(searchTerm))
+    dispatch(fetchDataFromApi())
   }
 
   return (

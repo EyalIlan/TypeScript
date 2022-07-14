@@ -1,27 +1,28 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import './TopNavbar.css'
-import { useDispatch} from 'react-redux';
-import { search,fetchDataFromApi } from '../../utils/store/reducers/movie';
+import { useDispatch, useSelector} from 'react-redux';
+import { searchState,ShowSearch } from '../../utils/store/reducers/features';
 export interface IAppProps {
 
 }
 
 export default function TopNavbar (props: IAppProps) {
   
-  const dispatch = useDispatch()
-  const SearchHandler = async (term:string) =>{
-    dispatch(search(term))
-    dispatch(fetchDataFromApi())
-  }
 
+  const dispatch = useDispatch()
+  const displaySearch = useSelector(searchState)  
+
+  
   return (
-    <div id='top_navbar'>
-        <div className='flex between align_center'>
+    <div  id='top_navbar'>
+    <div className='primeColor'>
+        <div className='flex between align_center big_screen_size'>
                 <div className='flex align_center' id='top_navbar_left'>
-                <h2>Ty<span>p</span>eflix</h2>
-                  <SearchBar SearchHandler = {SearchHandler}></SearchBar>
+                <h2 className='bigText'>Ty<span>p</span>eflix</h2>
+                {/* <SearchBar SearchHandler = {SearchHandler}></SearchBar> */}
+                <SearchBar ></SearchBar>
                 </div>
                 <div>
                   <div className='flex align_center'>
@@ -30,6 +31,24 @@ export default function TopNavbar (props: IAppProps) {
                   </div>
                 </div>
         </div>
+
+        <div className='small_screen_size'>
+            <div className='flex around align_center'>
+             
+                  <button className='button transpernt'><i className="fas fa-bars icon_container icon_click_color"></i></button>
+                  <img src="/icons/superman.png" alt="img" className='icon_container' />
+                  <button className='button transpernt'><i 
+                  className="fa-solid fa-magnifying-glass icon_container icon_click_color" 
+                  onClick={()=>{dispatch(ShowSearch())}}></i></button>
+                  
+                  <button className='button transpernt'><i className="far fa-user icon_container icon_click_color"></i></button>                    
+                
+             </div>
+        </div>
+    </div>
+            <div className='small_screen_size'>
+                {displaySearch?<SearchBar></SearchBar>:''}
+            </div>
     </div>
   );
 }

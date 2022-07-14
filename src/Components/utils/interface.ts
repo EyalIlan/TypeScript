@@ -10,3 +10,8 @@ export interface CardIF{
     first_air_date?:string
 }
 
+export interface Features{
+    showSearch:boolean
+    showActionMenu:boolean
+    showModal:boolean
+}

@@ -17,7 +17,7 @@ type Props = {
    let Year = year?.split('-')[0]
    let Title = ''
    if((title !== undefined && title.length>20) || (name !== undefined && name.length>20)){
-    Title = title?.substring(0,33)  || name?.substring(0,33)  || '' 
+    Title = title?.substring(0,32)  || name?.substring(0,32)  || '' 
    }
 
 

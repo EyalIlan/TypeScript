@@ -7,6 +7,7 @@ import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontyp
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
 import Pageination from '../../UI/Pageination/Pageination';
+import SearchBar from '../../UI/SearchBar/SearchBar';
 export interface IProps {
 
 }
@@ -20,7 +21,6 @@ const Hompage: React.FC<IProps> = (props) => {
   const movies = useSelector(moviesData)
   const SectionType = useSelector(SectionData)
   const searchTerm = useSelector(SearchTerm)
-
   
 
   useEffect(() => {
@@ -61,12 +61,10 @@ const Hompage: React.FC<IProps> = (props) => {
   }
   
   SectionActions = SectionActions?.map( (p,index) =>{
-    return <button key={index} className='btn btn_click btn_primary' onClick={() =>{changeTrendingType(p.value)}}>{p.text}</button>
+    return <button key={index} className='btn btn_click btn_primary bigText' onClick={() =>{changeTrendingType(p.value)}}>{p.text}</button>
   })
 
   const data =  movies.map((p, index) => {
-
-
     return (
       <Card key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date}></Card>
     )
@@ -75,8 +73,8 @@ const Hompage: React.FC<IProps> = (props) => {
   const showCards = (
     <div className='homepage container'>
         <div className='section_header'>
-              <h1 className='bigText'>{trending || searchTerm } {title}</h1>
-                <div className='flex justify_center'>
+              <h1 className='title'>{trending || searchTerm } {title}</h1>
+                <div className='flex justify_center specing'>
                   {SectionActions}  
                 </div>
                 <div>
@@ -89,18 +87,18 @@ const Hompage: React.FC<IProps> = (props) => {
         <div className='grid grid-col-5'>
          {data}
         </div>
+        <Pageination footer ={true} ></Pageination>
     </div>
   )
   
-  
+
 
 return (
 
     <div>
-      <div className='flex center'>  
-      {loader?<Spinner></Spinner>:showCards}
+      <div className='flex justify_center align_center screen'>
+        {loader?<Spinner></Spinner>:showCards}
       </div>
-      <Pageination footer ={true} ></Pageination>
      
     </div>
 

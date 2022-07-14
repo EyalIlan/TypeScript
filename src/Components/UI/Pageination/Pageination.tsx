@@ -44,9 +44,9 @@ const Pageination:React.FC<Props> = ({footer}) => {
         Pages = pages.map((p,index) =>{
 
             if(footer){
-                return (<button key={index} className={page === p?'active page_select_button':'page_select_button  btn_secondary'  } onClick={() =>{changePageHandler(p)}}>{p}</button>)
+                return (<button key={index} className={ page === p?'active page_select_button mediumText':'page_select_button    btn_secondary mediumText'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
             }else{
-                return (<button key={index} className={page === p?'active page_select_button':'page_select_button  btn_primary'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
+                return (<button key={index} className={ page === p?'active page_select_button mediumText':'page_select_button   btn_primary mediumText'} onClick={() =>{changePageHandler(p)}}>{p}</button>)
             }
 
         })       
@@ -58,7 +58,7 @@ const Pageination:React.FC<Props> = ({footer}) => {
     
 
     return (
-    <div className='pages_selection'>
+    <div className='pages_selection specing'>
         {Pages}
     </div>
   )

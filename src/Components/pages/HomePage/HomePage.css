@@ -7,7 +7,7 @@
 
 .section_header{
     min-height: 7vh;
-    padding: 15px 0;
+    padding: 35px 0;
 }
 
 @media(max-width:900px){
@@ -15,5 +15,7 @@
         /* padding: 40px; */
         margin-right: 0;
     }
-
+    .section_header{
+        padding: 15px 0px;
+    }
 }

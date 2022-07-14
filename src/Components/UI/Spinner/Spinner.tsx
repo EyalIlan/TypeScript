@@ -3,10 +3,12 @@ import './Spinner.css'
 type Props = {}
 
 const Spinner = (props: Props) => {
-  return (      
+  return (
+     
             <div className="loader">
             
             </div>
+           
   )
 }
 export default Spinner

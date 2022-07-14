@@ -24,4 +24,17 @@
     /* padding: 4px 15px; */
 }
 
-
+@media(max-width:1000px){
+    #searchbar_bar{
+        width: 100%;
+        margin: auto;
+        height: 40px;
+        /* margin: 5px 0; */
+    }
+    #searchbar_bar input{
+        width: 100%;
+        height: 100%;
+        /* background-color: white;
+        color: black; */
+    }
+}

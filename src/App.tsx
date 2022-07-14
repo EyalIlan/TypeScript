@@ -13,7 +13,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
           
-          
           <TopNavbar></TopNavbar>
           <SideNavbar></SideNavbar>
           <Routes>

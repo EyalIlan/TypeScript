@@ -13,10 +13,6 @@
 
 .loader {
 
-    position: absolute;
-    top: 40%;
-    left: 46%;
-
     width:150px;
     height:150px;
     border-radius: 50%;
@@ -73,5 +69,12 @@
     100% {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
+    }
+  }
+
+  @media(max-width:1000px){
+    .loader{
+      height: 85px;
+      width: 85px;
     }
   }
