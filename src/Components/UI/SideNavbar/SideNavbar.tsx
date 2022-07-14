@@ -2,8 +2,9 @@ import  React from 'react';
 import './SideNavbar.css'
 import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import {loaderState } from '../../utils/store/reducers/loader';
 import { changeSection,fetchDataFromApi,changeSelectiontype,changeSelectionPage } from '../../utils/store/reducers/movie';
+import { ShowActionMenu,menuState } from '../../utils/store/reducers/features';
+
 
 export interface IProps {
 
@@ -23,19 +24,16 @@ const SideNavbar:React.FC<IProps> = () => {
   
 
   const dispatch = useDispatch()
+  const displaymenu = useSelector(menuState)
 
-  let loader =  useSelector(loaderState)
 
-  // console.log(loader);
   
 
   const getDataFromRequest = async (section:string) =>{
-    // dispatch(activeLoader())
     dispatch(changeSection(section))
     dispatch(changeSelectiontype('popular'))
     dispatch(changeSelectionPage(1))
     dispatch(fetchDataFromApi())
-    // dispatch(loaderOff())
   }
   
   
@@ -53,7 +51,7 @@ const SideNavbar:React.FC<IProps> = () => {
       ,{
         id:2,
         imgUrl:'/images/tv-show.png',
-        title:'Tv_shows'
+        title:'Tv shows'
         ,linkAction:function(){
           
           getDataFromRequest('tv')
@@ -104,7 +102,9 @@ const SideNavbar:React.FC<IProps> = () => {
   return (
   <div key={index}>
   <div  className='flex navbar_link' onClick={()=>{toggleActive(index,p.linkAction)}}>
+      <div>
       <img src={p.imgUrl} className="navbar_Icon" alt="" />
+      </div>
       <div className='link_text flex center' >
         <h5>{p.title}</h5>
       </div>
@@ -122,9 +122,9 @@ const SideNavbar:React.FC<IProps> = () => {
                 <h2>TypeFlix</h2>
               </div> 
               {links}
-        <div className='modal_mode'>
-    
-        </div>
+              <div>
+
+              </div>
       </div>
 
 

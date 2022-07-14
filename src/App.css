@@ -107,7 +107,7 @@ body{
 
 
 .icon_container{
-    padding: 8px;
+    padding: 7px;
     height: 100%;
     font-size: 18px;
 }
@@ -121,6 +121,7 @@ body{
 
 .navbar_Icon{
     height: 21px;
+    /* margin: 5px; */
 }
 
 /* FLEX */
@@ -251,11 +252,11 @@ body{
     background-color: #2a2a72;
 }
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-    /* .icon_container{
-        padding: 8px 15px;
-    } */
+    .icon_container{
+        padding: 10px ;
+    }
     .container{
         padding: 0 10px;
         margin: auto;
@@ -295,6 +296,9 @@ body{
     .btn{
         padding:5px;
         
+    }
+    .navbar_Icon{
+        margin: 5px;
     }
     
 }

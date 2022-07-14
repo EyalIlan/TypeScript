@@ -31,7 +31,7 @@ export const {ShowSearch,ShowActionMenu,ShowModal} = featuresSlice.actions
 
 
 export const searchState = (state: RootState) => state.features.showSearch
-export const showActionMenu = (state: RootState) => state.features.showActionMenu
+export const menuState = (state: RootState) => state.features.showActionMenu
 export const showModal = (state: RootState) => state.features.showModal
 
 export default featuresSlice

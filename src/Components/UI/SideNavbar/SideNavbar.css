@@ -93,8 +93,35 @@
 
 
 @media(max-width:900px){
-    .navbar_container{
-        display: none;
+
+
+
+    .link_text_title{
+
+        opacity: 1;
+        margin-bottom: 9px;
+       
     }
 
+    .navbar_container{
+        width: 100%;
+        /* height:fit-content; */
+    }
+    
+    .navbar_container:hover{
+        width: 100%
+    }
+    .bottom_border{
+       display: none;
+    }
+    .link_text{
+        /* width:fit-content; */
+        font-size: 21px;
+        display: block;
+        text-align: left;
+        transition: 0.1s opacity ease-in;
+    }
+    .navbar_link div{
+        width: 40%;
+    }
 }

@@ -35,11 +35,13 @@ export default function TopNavbar (props: IAppProps) {
         <div className='small_screen_size'>
             <div className='flex around align_center'>
              
-                  <button className='button transpernt'><i className="fas fa-bars icon_container icon_click_color"></i></button>
+                  <button className='button transpernt' onClick={()=>{dispatch(ShowSearch())}}>
+                  <i className="fas fa-bars icon_container icon_click_color"></i>
+                  </button>
                   <img src="/icons/superman.png" alt="img" className='icon_container' />
-                  <button className='button transpernt'><i 
-                  className="fa-solid fa-magnifying-glass icon_container icon_click_color" 
-                  onClick={()=>{dispatch(ShowSearch())}}></i></button>
+                  <button className='button transpernt' onClick={()=>{dispatch(ShowSearch())}}>
+                  <i className="fa-solid fa-magnifying-glass icon_container icon_click_color" ></i>
+                  </button>
                   
                   <button className='button transpernt'><i className="far fa-user icon_container icon_click_color"></i></button>                    
                 
