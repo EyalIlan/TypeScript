@@ -3,7 +3,7 @@ import './SideNavbar.css'
 import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { changeSection,fetchDataFromApi,changeSelectiontype,changeSelectionPage } from '../../utils/store/reducers/movie';
-import { ShowActionMenu,menuState } from '../../utils/store/reducers/features';
+import { menuState } from '../../utils/store/reducers/features';
 
 
 export interface IProps {
@@ -25,7 +25,7 @@ const SideNavbar:React.FC<IProps> = () => {
 
   const dispatch = useDispatch()
   const displaymenu = useSelector(menuState)
-
+  
 
   
 
@@ -116,17 +116,24 @@ const SideNavbar:React.FC<IProps> = () => {
   })
 
   return (
-   
-       <div className='navbar_container'>
+   <div>
+   <div className='big_screen_size'>
+   <div className='navbar_container'>
               <div className='link_text_title'>
                 <h2>TypeFlix</h2>
               </div> 
-              {links}
-              <div>
-
-              </div>
-      </div>
-
+              {links}      
+    </div>
+    </div>
+   <div className='small_screen_size'>
+   {displaymenu?<div className='navbar_container'>
+              <div className='link_text_title'>
+                <h2>TypeFlix</h2>
+              </div> 
+              {links}      
+    </div>:''}
+    </div>
+    </div>   
 
   );
 }

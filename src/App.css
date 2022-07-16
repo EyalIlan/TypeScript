@@ -266,6 +266,7 @@ body{
 
     .big_screen_size{
         display: none;
+        /* opacity: 0; */
     }
 
     .small_screen_size{
@@ -291,14 +292,11 @@ body{
     }
 
     .grid-col-5{
+        grid-gap: 0.3rem;
         grid-template-columns: repeat(3,1fr);
     }
     .btn{
         padding:5px;
         
     }
-    .navbar_Icon{
-        margin: 5px;
-    }
-    
 }

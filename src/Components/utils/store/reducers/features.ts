@@ -6,7 +6,7 @@ import {Features} from '../../interface'
 
 const initalState:Features ={
     showSearch:false,
-    showActionMenu:false,
+    showActionMenu:true,
     showModal:false
 }
 
@@ -17,9 +17,11 @@ const featuresSlice = createSlice({
     reducers:{
         ShowSearch(state){
            state.showSearch = !state.showSearch
+           state.showActionMenu = false
         },
-        ShowActionMenu(state,actions){
+        ShowActionMenu(state){
             state.showActionMenu = !state.showActionMenu
+            state.showSearch = false
         },
         ShowModal(state,actions){
             state.showModal = ! state.showModal
