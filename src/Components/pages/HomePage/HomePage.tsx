@@ -75,7 +75,7 @@ const Hompage: React.FC<IProps> = (props) => {
         <div className='section_header'>
               <h1 className='title'>{trending || searchTerm } {title}</h1>
                 <div className='flex justify_center specing'>
-                  {SectionActions}  
+                  {SectionActions}
                 </div>
                 <div>
                   <Pageination footer ={false}></Pageination>

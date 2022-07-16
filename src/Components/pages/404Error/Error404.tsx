@@ -15,9 +15,11 @@ export default function Error404() {
   }
   
   return (
-    <div id='errorbackround' className='primary_color flex center flex_col'>
-        <h1>404 page</h1>
-        <button onClick={ReturnToSaveHaven}>return to main page</button>
+    <div id='errorbackround' className='screen flex justify_center align_center'>
+        <div>
+          <h1 className='title'>404 page</h1>
+          <button onClick={ReturnToSaveHaven} className="btn btn_primary mediumText">return to main page</button>
+        </div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import SideNavbar from './Components/UI/SideNavbar/SideNavbar'
 import Error404 from './Components/pages/404Error/Error404';
 import TopNavbar from './Components/UI/TopNavbar/TopNavbar';
 import Footer from './Components/UI/footer/footer';
+import Movie from './Components/pages/Movie/Movie';
 function App() {
 
 
@@ -16,7 +17,8 @@ function App() {
           <TopNavbar></TopNavbar>
           <SideNavbar></SideNavbar>
           <Routes>
-              <Route path='/'  element={<Hompage/>}/>
+              {/* <Route path='/'  element={<Hompage/>}/> */}
+              <Route path='/'  element={<Movie/>}/>
               <Route path = '*'  element={<Error404 />}/>
           </Routes>
           <Routes>

@@ -222,7 +222,8 @@ body{
     cursor: pointer;
 }
 .specing{
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    margin: 10px 0;
 }
 
 /* Colors */

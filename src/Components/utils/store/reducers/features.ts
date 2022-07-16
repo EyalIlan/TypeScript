@@ -6,7 +6,7 @@ import {Features} from '../../interface'
 
 const initalState:Features ={
     showSearch:false,
-    showActionMenu:true,
+    showActionMenu:false,
     showModal:false
 }
 

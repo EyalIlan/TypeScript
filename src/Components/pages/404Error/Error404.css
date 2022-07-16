@@ -5,21 +5,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* height: 100vh; */
     background-image: url('/public/images/404PageBG2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-size: 40px;
 }
 
 #errorbackround h1{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 #errorbackround button{
-    font-size: 20px;
-    padding: 20px;
+    /* font-size: 15px; */
+    padding: 10px;
     background-color: blue;
     color: white;
     cursor: pointer;
+    text-align: center;
 }

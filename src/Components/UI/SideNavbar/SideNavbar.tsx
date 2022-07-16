@@ -3,7 +3,7 @@ import './SideNavbar.css'
 import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { changeSection,fetchDataFromApi,changeSelectiontype,changeSelectionPage } from '../../utils/store/reducers/movie';
-import { menuState } from '../../utils/store/reducers/features';
+import { menuState,ShowActionMenu } from '../../utils/store/reducers/features';
 
 
 export interface IProps {
@@ -85,6 +85,7 @@ const SideNavbar:React.FC<IProps> = () => {
   ]
   })
   const toggleActive = (index:number,linkAction:Function):void =>{
+    dispatch(ShowActionMenu())
     SetActive({...active,activeLink:index})
     linkAction()
   }
