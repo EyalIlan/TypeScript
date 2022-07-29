@@ -17,7 +17,7 @@ export default function TopNavbar (props: IAppProps) {
   
   
   return (
-    <div  id='top_navbar'>
+    <div id='top_navbar'>
     <div className='primeColor'>
         <div className='flex between align_center big_screen_size'>
                 <div className='flex align_center' id='top_navbar_left'>

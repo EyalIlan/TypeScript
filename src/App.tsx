@@ -13,11 +13,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-          
           <TopNavbar></TopNavbar>
           <SideNavbar></SideNavbar>
           <Routes>
-              {/* <Route path='/'  element={<Hompage/>}/> */}
+              <Route path='/:ides'  element={<Hompage/>}/>
               <Route path='/'  element={<Movie/>}/>
               <Route path = '*'  element={<Error404 />}/>
           </Routes>

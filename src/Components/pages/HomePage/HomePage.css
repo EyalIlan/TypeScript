@@ -5,17 +5,13 @@
 }
 
 
-.section_header{
-    min-height: 7vh;
-    padding: 35px 0;
-}
+
+
 
 @media(max-width:900px){
     .homepage{
         /* padding: 40px; */
         margin-right: 0;
     }
-    .section_header{
-        padding: 20px 0px;
-    }
+   
 }

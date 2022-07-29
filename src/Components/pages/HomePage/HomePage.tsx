@@ -71,8 +71,9 @@ const Hompage: React.FC<IProps> = (props) => {
   })
   
   const showCards = (
-    <div className='homepage container'>
-        <div className='section_header'>
+    <div className='page'>
+      <div className='container'>
+        <div>
               <h1 className='title'>{trending || searchTerm } {title}</h1>
                 <div className='flex justify_center specing'>
                   {SectionActions}
@@ -84,10 +85,11 @@ const Hompage: React.FC<IProps> = (props) => {
               </div>
         </div>
 
-        <div className='grid grid-col-5'>
+        <div className='grid grid-gap grid-col-7'>
          {data}
         </div>
         <Pageination footer ={true} ></Pageination>
+    </div>
     </div>
   )
   
