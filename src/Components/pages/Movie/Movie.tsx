@@ -63,7 +63,7 @@ const Movie = (props:Props) => {
   
 
   let images = phothos?.backdrops.map((p,index:number) =>{
-    if(index <3){
+    if(index <6){
       return <img key={index} src={`${imagesUrlRequest}/${p.file_path}`} alt="" />
     }else{
       return ''
@@ -72,7 +72,12 @@ const Movie = (props:Props) => {
 
   let logos = phothos?.logos.map((p,index:number) =>{
     if(index<4){
-      return <img key={index} src={`${imagesUrlRequest}/${p.file_path}`} alt="" />
+
+        return (
+          <div  className='flex justify_center pad'>
+            <img key={index} src={`${imagesUrlRequest}/${p.file_path}`} alt="" />
+          </div>
+        )
     }
   else{
     return ''
@@ -99,19 +104,19 @@ const Movie = (props:Props) => {
            <div className='responsive  specing flex around '>
             
             <div className='small_images specing'>
+
+            <div>
                 {data.production_companies?.map((p:any,index:number) =>{
                 if(index<2){ 
                   return( 
-                    <div className='flex justify_center bg' key={index} >
-                    <img   src={`${imagesUrlRequest}/${p.logo_path}`} alt="" />
-                    </div>
+                    <div>
+                    <img className='bg' key={index}  src={`${imagesUrlRequest}/${p.logo_path}`} alt="" />
+                   </div>
                   )
-                 }else{
-                  return ''
                  }  
                 
                 })}
-            
+            </div>
           </div>
             <div className='specing'>
                 <p className='bigText'>Vote average:{data.vote_average}</p>
@@ -135,11 +140,13 @@ const Movie = (props:Props) => {
 
     
 
-     
-     <div className='flex around small_images pad'>
+     <div>
+
+     <div className='responsive around small_images pad'>
       {logos}
      </div>
       </div>
+     </div>
     
     
   )
