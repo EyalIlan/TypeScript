@@ -197,8 +197,11 @@ a{
 }
 
 .small_images img{
-    max-width: 150px;
-    max-height: 100px;
+    width: 100%;
+    min-width: 70px;
+    max-width: 200px;
+    /* min-height: 70px; */
+    /* max-height: 150px; */
 }
 
 .grid_content_sidenav{
@@ -262,11 +265,14 @@ a{
 }
 .specing{
     /* padding: 20px 0; */
-    margin: 25px 0;
+    margin: 35px 0;
+}
+/* TODO need to clean css classes!! */
+.responsive{ 
+    display: flex;
 }
 
 /* Colors */
-
 
 
 .yellow{
@@ -299,6 +305,10 @@ a{
 
 @media(max-width:1000px){
 
+    .responsive{
+        display: block;
+    }
+
     .icon_container{
         padding: 10px ;
     }
@@ -318,9 +328,7 @@ a{
         display: block;
     }
 
-    .specing{
-        padding: 10px 0px;
-    }
+  
 
   
 

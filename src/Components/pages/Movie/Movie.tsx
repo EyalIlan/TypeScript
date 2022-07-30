@@ -71,7 +71,7 @@ const Movie = (props:Props) => {
   })
 
   let logos = phothos?.logos.map((p,index:number) =>{
-    if(index<5){
+    if(index<4){
       return <img key={index} src={`${imagesUrlRequest}/${p.file_path}`} alt="" />
     }
   else{
@@ -84,57 +84,58 @@ const Movie = (props:Props) => {
     <div className='screen container'>
      
      <div id='menu-icons' className=' button'>
-     <Link to={'/'}><i className="fa-solid fa-arrow-rotate-left icon_container primeColorR"></i></Link>
+        <Link to={'/'}><i className="fa-solid fa-arrow-rotate-left icon_container primeColorR"></i></Link>
         <i className="fa-solid fa-heart icon_container "></i>
      </div>
      
-     <div className='padContent flex around'>
+     <div className='padContent responsive around '>
         
-        <div className=''>
-          <img id='poster' src={`${ imagesUrlRequest}/${data.poster_path}`} alt="" />
-       </div>
-      
+
       <div className='content'>
           <h1>{data?.title}</h1>
           <hr  className='specing'/>
           <p className='bigText'>{data?.overview}</p> 
-           <Youtube videoId={`${video?video.key:''}`} opts={opts} onReady={onReady} className='specing'/>
-       </div>
-     </div >
-     <div className='flex'>
-
-     <div className='grid grid-col-6 small_images flex1' id='glarry'>
-        {images}
-     </div>
-     <div className=' small_images flex2  pad flex around align_center' id='glarry'>
+           <Youtube  id='youtube' videoId={`${video?video.key:''}`} opts={opts} onReady={onReady} className='specing'/>
+           <div className='responsive  specing flex around '>
             
-            <div className='small_images'>
+            <div className='small_images specing'>
                 {data.production_companies?.map((p:any,index:number) =>{
                 if(index<2){ 
                   return( 
-                    <div key={index}>
-                    <img className=''  src={`${imagesUrlRequest}/${p.logo_path}`} alt="" />
-                  </div>)
+                    <div className='flex justify_center bg' key={index} >
+                    <img   src={`${imagesUrlRequest}/${p.logo_path}`} alt="" />
+                    </div>
+                  )
                  }else{
                   return ''
                  }  
                 
                 })}
             
-            </div>
-            <div>
+          </div>
+            <div className='specing'>
                 <p className='bigText'>Vote average:{data.vote_average}</p>
                 <p className='bigText'>Original language:{data.original_language}</p>
                 <p className='bigText'>Budget:{data.budget}$</p>
                 <p className='bigText'>Vote count:{data.vote_count}</p>
             </div>
-            <div>
+            <div className='specing'>
                 <p className='bigText'>Status:{data.status}</p>
                 <p className='bigText'>Adult:{data.adult?'true':'false'}</p>
             </div>
      </div>
-
+       </div>
+       <div className='' >
+          <img id='poster'  src={`${ imagesUrlRequest}/${data.poster_path}`} alt="" />
+          <div className='grid grid-col-3 small_images'>
+          {images} 
+          </div>
+     </div >
      </div>
+
+    
+
+     
      <div className='flex around small_images pad'>
       {logos}
      </div>
