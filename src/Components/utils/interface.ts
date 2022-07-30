@@ -8,6 +8,7 @@ export interface CardIF{
     profile_path?:string
     release_date?:string
     first_air_date?:string
+    id:number
 }
 
 export interface Features{

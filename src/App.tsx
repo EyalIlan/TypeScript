@@ -16,8 +16,8 @@ function App() {
           <TopNavbar></TopNavbar>
           <SideNavbar></SideNavbar>
           <Routes>
-              <Route path='/:ides'  element={<Hompage/>}/>
-              <Route path='/'  element={<Movie/>}/>
+              <Route path='/'  element={<Hompage/>}/>
+              <Route path='/movie/:id'  element={<Movie/>}/>
               <Route path = '*'  element={<Error404 />}/>
           </Routes>
           <Routes>

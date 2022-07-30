@@ -24,6 +24,11 @@ p{
     line-height: 1.4;
 }
 
+a{
+    text-decoration: none;
+    color:  white;
+}
+
 .pad{
     padding: 20px;
 }
@@ -192,8 +197,8 @@ p{
 }
 
 .small_images img{
-    width: 80px;
-    height: 80px;
+    max-width: 150px;
+    max-height: 100px;
 }
 
 .grid_content_sidenav{
@@ -270,6 +275,11 @@ p{
 
 .transpernt{
     background-color: transparent;
+}
+
+
+.primeColorR{
+    color: #0026fd;
 }
 
 .primeColorBg{

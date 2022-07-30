@@ -1,5 +1,6 @@
 import React from 'react'
 import { imagesUrlRequest } from '../../utils/data'
+import { Link } from "react-router-dom";
 import './Card.css'
 
 type Props = {
@@ -9,9 +10,10 @@ type Props = {
     title?:string
     name?:string
     year?:string
+    ID:number
 }
 
- const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year}) => {
+ const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,ID}) => {
    
    
    let Year = year?.split('-')[0]
@@ -23,6 +25,7 @@ type Props = {
 
     return (
     <div className='card'>
+        <Link to={`/movie/${ID}`}>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>
 
@@ -43,6 +46,7 @@ type Props = {
         </div>
     
         </div>
+    </Link>
     </div>
   )
 }
