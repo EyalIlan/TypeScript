@@ -27,7 +27,7 @@ export default function TopNavbar (props: IAppProps) {
                 <div>
                   <div className='flex align_center'>
                   <i className="fa-solid fa-jedi"></i>
-                  <button className='btn btn_tranpernt'>Login</button>
+                  {/* <button className='btn btn_tranpernt'>Login</button> */}
                   </div>
                 </div>
         </div>

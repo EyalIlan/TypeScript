@@ -108,7 +108,7 @@ const Movie = (props:Props) => {
         <i className="fa-solid fa-heart icon_container "></i>
      </div>
      
-     <div className='padContent responsive around '>
+     <div className='padContent responsive around'>
         
 
       <div className='content'>
