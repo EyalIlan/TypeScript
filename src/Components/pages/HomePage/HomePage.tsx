@@ -21,7 +21,7 @@ const Hompage: React.FC<IProps> = (props) => {
   const SectionType = useSelector(SectionData)
   const searchTerm = useSelector(SearchTerm)
   
-  console.log(movies);
+  
   
   useEffect(() => {
     
