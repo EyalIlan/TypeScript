@@ -74,11 +74,11 @@ const Movie = (props:Props) => {
     let local = localStorage.getItem("data")
     if(local){
         let favorites = JSON.parse(local)
-        favorites.push({name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id})
+        favorites.push({name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id,Section:SectionType})
         favorites = JSON.stringify(favorites)
         localStorage.setItem("data",favorites)
     }else{
-        let favorites = [{name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id}]
+        let favorites = [{name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id,Section:SectionType}]
         let Favorites = JSON.stringify(favorites)
         localStorage.setItem("data",Favorites)
     }    

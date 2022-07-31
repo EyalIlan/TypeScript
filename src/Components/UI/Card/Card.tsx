@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { imagesUrlRequest } from '../../utils/data'
 import { Link } from "react-router-dom";
+import {changeSection} from '../../utils/store/reducers/movie';
 import './Card.css'
+import { useDispatch } from 'react-redux';
 
 type Props = {
     imageUrl?:string
@@ -10,21 +12,32 @@ type Props = {
     title?:string
     name?:string
     year?:string
+    trending?:string
     ID:number
 }
 
- const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,ID}) => {
+const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,trending,ID}) => {
    
    
+   const dispatch = useDispatch()
+
+    useEffect(() =>{
+
+        if(trending){
+            dispatch(changeSection(trending))
+        }
+
+    },[])
+
+
    let Year = year?.split('-')[0]
    let Title = ''
    if((title !== undefined && title.length>20) || (name !== undefined && name.length>20)){
     Title = title?.substring(0,32)  || name?.substring(0,32)  || '' 
    }
 
-
-    return (
-    <div className='card'>
+    return (     
+        <div className='card'>
         <Link to={`/movie/${ID}`}>
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>

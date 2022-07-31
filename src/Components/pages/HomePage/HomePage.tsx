@@ -7,6 +7,7 @@ import {fetchDataFromApi, LoaderState, moviesData,SectionData,changeSelectiontyp
 import Spinner from '../../UI/Spinner/Spinner';
 import { trendinActionRequestsObject } from '../../utils/objects';
 import Pageination from '../../UI/Pageination/Pageination';
+import {Link} from 'react-router-dom'
 export interface IProps {
 
 }
@@ -65,7 +66,7 @@ const Hompage: React.FC<IProps> = (props) => {
 
   const data =  movies.map((p, index) => {
     return (
-      <Card ID={p.id}  key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date}></Card>
+      <Card key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date} ID={p.id}></Card>
     )
   })
   
