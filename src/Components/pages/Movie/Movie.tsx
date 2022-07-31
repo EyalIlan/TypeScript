@@ -51,20 +51,14 @@ const Movie = (props:Props) => {
         SetData(Pagedata.data)
          
 
-        console.log(`https://api.themoviedb.org/3/${SectionType}/${id}/images?api_key=564ff4ab275baff4372adb3dc85ab368`);
+        // console.log(`https://api.themoviedb.org/3/${SectionType}/${id}/images?api_key=564ff4ab275baff4372adb3dc85ab368`);
         const photos = await TmdbUrl.get(`https://api.themoviedb.org/3/${SectionType}/${id}/images?api_key=564ff4ab275baff4372adb3dc85ab368`)
         SetPhotes(photos.data)
                    
         
         const video = await TmdbUrl.get(`https://api.themoviedb.org/3/${SectionType}/${id}/videos?api_key=564ff4ab275baff4372adb3dc85ab368`)        
         SetVideo(video.data.results[0])
-        
 
-        
-      
-        
-        
-        
     }
     request()
   
@@ -74,8 +68,25 @@ const Movie = (props:Props) => {
   const  onReady = (event:any) => {
     event.target.pauseVideo();
   }
-  // console.log(phothos);
   
+  const favoritesHandler = () =>{
+    
+    let local = localStorage.getItem("data")
+    if(local){
+        let favorites = JSON.parse(local)
+        favorites.push({name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id})
+        favorites = JSON.stringify(favorites)
+        localStorage.setItem("data",favorites)
+    }else{
+        let favorites = [{name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id}]
+        let Favorites = JSON.stringify(favorites)
+        localStorage.setItem("data",Favorites)
+    }    
+    // if(!local){
+    //   local = []
+    // }
+
+  }
   
   let images = (phothos?.backdrops || phothos?.profiles || []).map((p,index:number) =>{
     
@@ -105,7 +116,7 @@ const Movie = (props:Props) => {
      
      <div id='menu-icons' className=' button'>
         <Link to={'/'}><i className="fa-solid fa-arrow-rotate-left icon_container primeColorR"></i></Link>
-        <i className="fa-solid fa-heart icon_container "></i>
+        <i className="fa-solid fa-heart icon_container " onClick={favoritesHandler}></i>
      </div>
      
      <div className='padContent responsive around'>
@@ -141,7 +152,9 @@ const Movie = (props:Props) => {
             </div>
             <div className='specing'>
                 <p className='bigText'>{data.status?`Status: ${data.status}`:`Popularity: ${data.popularity}`}</p>
-                <p className='bigText'>{data.adult?`Adult:${data.adult}`:`Place of birth: ${data.place_of_birth}`}</p>
+                <p className='bigText'>{data.release_date?`Release date:${data.release_date}`:`Place of birth: ${data.place_of_birth}`}</p>
+                <p className='bigText'>{data.runtime?`Runtime:${data.runtime}`:``}</p>
+                <p className='bigText'>{data.revenue?`Revenue:${data.revenue}$`:``}</p>
             </div>
      </div>
        </div>

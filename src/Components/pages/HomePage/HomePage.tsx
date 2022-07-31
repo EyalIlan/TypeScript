@@ -22,7 +22,6 @@ const Hompage: React.FC<IProps> = (props) => {
   const searchTerm = useSelector(SearchTerm)
   
   
-  
   useEffect(() => {
     
     const Request = async () => {

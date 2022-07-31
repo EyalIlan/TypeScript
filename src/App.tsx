@@ -7,6 +7,7 @@ import Error404 from './Components/pages/404Error/Error404';
 import TopNavbar from './Components/UI/TopNavbar/TopNavbar';
 import Footer from './Components/UI/footer/footer';
 import Movie from './Components/pages/Movie/Movie';
+import Favorites from './Components/pages/Favorites/Favorites';
 function App() {
 
 
@@ -18,7 +19,9 @@ function App() {
           <Routes>
               <Route path='/'  element={<Hompage/>}/>
               <Route path='/movie/:id'  element={<Movie/>}/>
+              <Route path='/favorites' element={<Favorites/>}></Route>
               <Route path = '*'  element={<Error404 />}/>
+
           </Routes>
           <Routes>
           </Routes>

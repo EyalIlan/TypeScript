@@ -11,7 +11,6 @@ export const fetchDataFromApi = createAsyncThunk('movie/fetchData', async (paylo
 
     
     try {
-                            // TmdbUrl.get(`search/${SectionType.sectionType}?api_key=${TmdbApiKey}&page=${page}&query=${e}`)
         const { data } = await TmdbUrl.get(`${search}${sectionType}${trendingType}?api_key=${TmdbApiKey}&page=${page}&query=${query}`)
         return data
     }
