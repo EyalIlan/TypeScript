@@ -44,8 +44,8 @@ const  Favorites = (props: IAppProps) => {
        
         return (
            
-                <div onClick={((event)=>{NavigateHandler(p.Section)})} className='flex'>
-                <Card   key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date} trending={p.Section} ID={p.id}>
+                <div key={index} onClick={((event)=>{NavigateHandler(p.Section)})} className='flex'>
+                <Card    imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date} trending={p.Section} ID={p.id}>
 
                 </Card> 
                 </div>
