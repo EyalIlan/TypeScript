@@ -3,6 +3,8 @@ import Card from '../../UI/Card/Card';
 import {CardIF} from '../../utils/interface'
 import {Link} from 'react-router-dom'
 import './Favorites.css'
+import { useDispatch } from 'react-redux';
+import { changeSection } from '../../utils/store/reducers/movie';
 
 export interface IAppProps {
     
@@ -17,7 +19,7 @@ interface Favor extends CardIF{
 const  Favorites = (props: IAppProps) => {
 
     const [favorite,SetFavorite] = useState<Favor[]>([])
-
+    const dispatch = useDispatch()
 
     useEffect(() =>{
 
@@ -32,19 +34,22 @@ const  Favorites = (props: IAppProps) => {
         
         
     },[])
-    const routeHandler = () =>{
-        
-    }
 
-    // <Link to={`/movie/${p.id}`}>
+    const NavigateHandler = (p:string) =>{
+        dispatch(changeSection(p))
+   }
     
-    console.log(favorite);
     
-
     let Favorite = favorite.map((p,index) =>{
        
         return (
-          <Card  key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date} trending={p.Section} ID={p.id}></Card> 
+           
+                <div onClick={((event)=>{NavigateHandler(p.Section)})} className='flex'>
+                <Card   key={index} imageUrl={p.poster_path || p.profile_path} title={p.title} rating={p.vote_average} name={p.name} year={p.release_date || p.first_air_date} trending={p.Section} ID={p.id}>
+
+                </Card> 
+                </div>
+         
           )
     })
    

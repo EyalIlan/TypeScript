@@ -77,6 +77,8 @@ const Movie = (props:Props) => {
         favorites.push({name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id,Section:SectionType})
         favorites = JSON.stringify(favorites)
         localStorage.setItem("data",favorites)
+        // let Delete = JSON.stringify([])
+        // localStorage.setItem("data",Delete)
     }else{
         let favorites = [{name:data.name,title:data.title,release_date:data.release_date,first_air_date:data.first_air_date ,poster_path:data.poster_path, profile_path:data.profile_path ,vote_average:data.vote_average,id:data.id,Section:SectionType}]
         let Favorites = JSON.stringify(favorites)

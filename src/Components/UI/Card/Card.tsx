@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { imagesUrlRequest } from '../../utils/data'
-import { Link } from "react-router-dom";
+import {  useNavigate,Link } from "react-router-dom";
 import {changeSection} from '../../utils/store/reducers/movie';
 import './Card.css'
 import { useDispatch } from 'react-redux';
@@ -18,17 +18,8 @@ type Props = {
 
 const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,trending,ID}) => {
    
-   
    const dispatch = useDispatch()
-
-    useEffect(() =>{
-
-        if(trending){
-            dispatch(changeSection(trending))
-        }
-
-    },[])
-
+   const navigate = useNavigate()
 
    let Year = year?.split('-')[0]
    let Title = ''
@@ -36,9 +27,13 @@ const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,tren
     Title = title?.substring(0,32)  || name?.substring(0,32)  || '' 
    }
 
+
+
     return (     
-        <div className='card'>
+
+        <div className='card' >
         <Link to={`/movie/${ID}`}>
+        
         <img src={imageUrl?`${imagesUrlRequest}/${imageUrl}`:'/images/movieNotFound.jpg'} alt="poster" />
         <div className='card_content'>
 
@@ -59,6 +54,8 @@ const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,tren
         </div>
     
         </div>
+        {/* </button> */}
+    
     </Link>
     </div>
   )
