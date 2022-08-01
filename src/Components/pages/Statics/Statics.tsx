@@ -30,6 +30,7 @@ const Statics = (props: Props) => {
     
     let OBJ:FavObject = {}
     favorites.forEach(p =>{
+    if(p.genres){
         p.genres.forEach(R =>{
             
             if(OBJ[R.name]){
@@ -37,8 +38,11 @@ const Statics = (props: Props) => {
             }else{
                 OBJ[R.name] = 1
             }
-
+            
         })
+        
+    }
+
     })    
     // console.log(OBJ);
 
@@ -50,16 +54,8 @@ const Statics = (props: Props) => {
         labels.push(gen)
         genNumber.push(OBJ[gen])
     }
-    console.log(genNumber);
     
-    // const data = {
-    //     labels:labels,
-    //     dataset:[{
-    //         label:'hello',
-    //         data:genNumber,
 
-    //     }]
-    // }
     
     const data = {
         labels:labels,
@@ -85,7 +81,7 @@ const Statics = (props: Props) => {
         <div>
         <div className='screen flex container align_center justify_center'>
           <div>
-           <h1 style={{'textAlign':'center'}}>Statistics of your favorites Genars</h1>
+           <h1 className='specing' style={{'textAlign':'center'}}>Statistics of your favorites Genars</h1>
              <Bar id='graph' data={data}> 
         
             </Bar>
