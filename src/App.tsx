@@ -8,6 +8,7 @@ import TopNavbar from './Components/UI/TopNavbar/TopNavbar';
 import Footer from './Components/UI/footer/footer';
 import Movie from './Components/pages/Movie/Movie';
 import Favorites from './Components/pages/Favorites/Favorites';
+import Statics from './Components/pages/Statics/Statics';
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
               <Route path='/'  element={<Hompage/>}/>
               <Route path='/movie/:id'  element={<Movie/>}/>
               <Route path='/favorites' element={<Favorites/>}></Route>
+              <Route path='/statics' element={<Statics/>}></Route>
               <Route path = '*'  element={<Error404 />}/>
 
           </Routes>

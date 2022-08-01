@@ -21,18 +21,16 @@ const  Favorites = (props: IAppProps) => {
     const [favorite,SetFavorite] = useState<Favor[]>([])
     const dispatch = useDispatch()
 
-    useEffect(() =>{
+    useEffect(() =>{ // Getting the data from loacl storagh and save it in state
 
         let favorites = localStorage.getItem("data")
-       
         if(favorites){
           let Favorites = JSON.parse(favorites)
           SetFavorite(Favorites)
            
         }
        
-        
-        
+         
     },[])
 
     const NavigateHandler = (p:string) =>{

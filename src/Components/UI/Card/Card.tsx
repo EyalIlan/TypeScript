@@ -18,8 +18,7 @@ type Props = {
 
 const Card:React.FC<Props> = ({imageUrl,rating,descritption,title,name,year,trending,ID}) => {
    
-   const dispatch = useDispatch()
-   const navigate = useNavigate()
+
 
    let Year = year?.split('-')[0]
    let Title = ''

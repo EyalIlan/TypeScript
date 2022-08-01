@@ -5,6 +5,7 @@ import './TopNavbar.css'
 import { useDispatch, useSelector} from 'react-redux';
 import { searchState,ShowSearch,ShowActionMenu } from '../../utils/store/reducers/features';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export interface IAppProps {
 
 }
@@ -21,7 +22,7 @@ export default function TopNavbar (props: IAppProps) {
     <div className='primeColor'>
         <div className='flex between align_center big_screen_size'>
                 <div className='flex align_center' id='top_navbar_left'>
-                <h2 className='bigText gamers'>MOVIE APP</h2>
+                <Link to={'/'}><h2 className='bigText gamers'>MOVIE APP</h2></Link>
                 <SearchBar ></SearchBar>
                 </div>
                 <div>
