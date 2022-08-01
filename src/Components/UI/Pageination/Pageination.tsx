@@ -23,6 +23,10 @@ const Pageination:React.FC<Props> = ({footer}) => {
     const changePageHandler = (pageNumber:number) =>{
         dispatch(changeSelectionPage(pageNumber))
         dispatch(fetchDataFromApi())
+        window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        })
        
     
     }
