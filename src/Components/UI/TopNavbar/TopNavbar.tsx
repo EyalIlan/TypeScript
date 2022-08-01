@@ -21,7 +21,7 @@ export default function TopNavbar (props: IAppProps) {
     <div className='primeColor'>
         <div className='flex between align_center big_screen_size'>
                 <div className='flex align_center' id='top_navbar_left'>
-                <h2 className='bigText'>Ty<span>p</span>eflix</h2>
+                <h2 className='bigText gamers'>MOVIE APP</h2>
                 <SearchBar ></SearchBar>
                 </div>
                 <div>

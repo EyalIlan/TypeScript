@@ -130,7 +130,7 @@ const SideNavbar: React.FC<IProps> = () => {
       <div className='big_screen_size'>
         <div className='navbar_container'>
           <div className='link_text_title'>
-            <h2>TypeFlix</h2>
+            <h2 className='gamers'>Movie App</h2>
           </div>
           {links}
         </div>
@@ -138,7 +138,7 @@ const SideNavbar: React.FC<IProps> = () => {
       <div className='small_screen_size'>
         {displaymenu ? <div className='navbar_container'>
           <div className='link_text_title'>
-            <h2>TypeFlix</h2>
+            <h2 className=''>Movie App</h2>
           </div>
           {links}
         </div> : ''}

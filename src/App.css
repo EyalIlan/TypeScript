@@ -30,7 +30,10 @@ a{
 }
 
 
-
+@font-face{
+    src: url('/public/fonts/TransformersMovie.ttf');
+    font-family:GAMERIA;
+}
 
 .page{
     margin: 60px 0;
@@ -263,12 +266,18 @@ a{
     cursor: pointer;
 }
 .specing{
-    /* padding: 20px 0; */
     margin: 35px 0;
 }
 /* TODO need to clean css classes!! */
 .responsive{ 
     display: flex;
+}
+
+
+/* FONTS */
+
+.gamers{
+    font-family:GAMERIA;
 }
 
 /* Colors */
