@@ -4,6 +4,8 @@
 ### the data was taken from TMDB api
 ### front-end: React,Redux-toolkit,local storagh,axios 
 
+## live project https://thriving-snickerdoodle-72064e.netlify.app
+
 ## main page of the app selected category movie,popular
 ![main_screen](https://user-images.githubusercontent.com/55767736/214561432-29ae2188-3189-4bfe-b2fd-e3bcce704188.png)
 
