@@ -22,8 +22,7 @@
 ## selected page on selected on a movie,Tv show or actor you are transfer to the selected page with more detail
 ![movie page](https://user-images.githubusercontent.com/55767736/214562806-4a2ba9c0-12c7-459c-ab69-2de048c09151.png)
 
-## when click on the arrow you are transfer back to the main page and when press on the heart it insert or remove from your favorites/ if the heart is red
-## it is in your favorites
+## when click on the arrow you are transfer back to the main page and when press on the heart it insert or remove from your favorites.
 ![go back iocn or add to favorites](https://user-images.githubusercontent.com/55767736/214563227-8906ab91-67b5-49a9-9478-70b1a511c864.png)
 
 ## your favorites list
