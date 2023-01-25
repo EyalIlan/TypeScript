@@ -1,46 +1,33 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## movie app 
+### you can find in this app all your favorites movies,Tv shows,actors
+### the data was taken from TMDB api
+### front-end: React,Redux-toolkit,local storagh,axios 
 
-## Available Scripts
+## main page of the app selected category movie,popular
+![main_screen](https://user-images.githubusercontent.com/55767736/214561432-29ae2188-3189-4bfe-b2fd-e3bcce704188.png)
 
-In the project directory, you can run:
+## tv section you can look on sidebar whice section your in and in the title the trending type
+![change_section](https://user-images.githubusercontent.com/55767736/214561602-234a9823-acce-4f12-84f5-e5837de963a7.png)
 
-### `npm start`
+## actors section
+![actors](https://user-images.githubusercontent.com/55767736/214562087-256751ce-ba91-406c-a4d7-c64f56c2a905.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## pagination chagne depending on the page you are and the title change to the trending selected
+![pagination_and_title change](https://user-images.githubusercontent.com/55767736/214562243-28258d3b-c310-4e2b-806e-8f1ff83955e9.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## you can search what you like the search will look on the term given depending on the section it is 
+![search](https://user-images.githubusercontent.com/55767736/214562458-c49ac500-7c29-4e5f-b724-c82957bf5782.png)
 
-### `npm test`
+## selected page on selected on a movie,Tv show or actor you are transfer to the selected page with more detail
+![movie page](https://user-images.githubusercontent.com/55767736/214562806-4a2ba9c0-12c7-459c-ab69-2de048c09151.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## when click on the arrow you are transfer back to the main page and when press on the heart it insert or remove from your favorites/ if the heart is red
+## it is in your favorites
+![go back iocn or add to favorites](https://user-images.githubusercontent.com/55767736/214563227-8906ab91-67b5-49a9-9478-70b1a511c864.png)
 
-### `npm run build`
+## your favorites list
+![favorites](https://user-images.githubusercontent.com/55767736/214563617-9439e689-2483-48a6-9975-ab2b38464e41.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## graph show how much you are interst on each ganre taking the results from your favorites
+![anlyst](https://user-images.githubusercontent.com/55767736/214563688-f28a2b69-f1e2-4fb6-b2e5-55db6a6d68f1.png)
